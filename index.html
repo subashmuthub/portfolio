@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Subash Muthu B – Full Stack Developer. Specialising in React, Node.js, and modern web technologies.">
+  <meta name="keywords" content="web developer, full stack, React, Node.js, portfolio, Tamil Nadu, MERN">
+  <meta name="author" content="Subash Muthu B">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://subashmuthub.dev/">
+  <meta property="og:title" content="Subash Muthu B – Full Stack Developer">
+  <meta property="og:description" content="Professional Full Stack Developer specialising in modern web technologies.">
+  <meta property="og:image" content="001.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Subash Muthu B – Full Stack Developer">
+  <meta name="twitter:description" content="Professional Full Stack Developer specialising in modern web technologies.">
+  <meta name="twitter:image" content="001.jpg">
+  <title>Subash Muthu B – Full Stack Developer | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preload" href="001.jpg" as="image">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/all-styles.css">
+  <style>
+    /* ── PROJECT CARD ENHANCEMENTS ── */
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .project-header h3 {
+      margin-bottom: 0;
+      flex: 1;
+    }
+    .proj-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 50px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .proj-status.live {
+      background: rgba(0,255,136,0.08);
+      border: 1px solid rgba(0,255,136,0.25);
+      color: #00ff88;
+    }
+    .proj-status-dot {
+      width: 6px; height: 6px;
+      background: #00ff88;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease infinite;
+    }
+
+    /* Card image themed backgrounds */
+    .card-img-inner.proj-lab {
+      background:
+        linear-gradient(135deg, rgba(77,171,247,0.06) 0%, rgba(132,94,247,0.06) 100%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(77,171,247,0.025) 10px,
+          rgba(77,171,247,0.025) 11px
+        );
+      position: relative;
+      overflow: hidden;
+    }
+    .card-img-inner.proj-srm {
+      background:
+        linear-gradient(135deg, rgba(0,212,255,0.06) 0%, rgba(0,255,136,0.05) 100%),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 10px,
+          rgba(0,212,255,0.025) 10px,
+          rgba(0,212,255,0.025) 11px
+        );
+      position: relative;
+      overflow: hidden;
+    }
+    .card-img-inner.proj-cgpa {
+      background:
+        linear-gradient(135deg, rgba(240,165,0,0.06) 0%, rgba(255,80,80,0.05) 100%),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 14px,
+          rgba(240,165,0,0.02) 14px,
+          rgba(240,165,0,0.02) 15px
+        );
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px; height: 64px;
+      border-radius: 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .proj-lab .proj-icon-wrap {
+      background: rgba(77,171,247,0.1);
+      border: 1px solid rgba(77,171,247,0.25);
+      box-shadow: 0 0 24px rgba(77,171,247,0.15);
+    }
+    .proj-lab .proj-icon-wrap i { color: #4dabf7; font-size: 1.8rem; }
+
+    .proj-srm .proj-icon-wrap {
+      background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.25);
+      box-shadow: 0 0 24px rgba(0,212,255,0.15);
+    }
+    .proj-srm .proj-icon-wrap i { color: #00d4ff; font-size: 1.8rem; }
+
+    .proj-cgpa .proj-icon-wrap {
+      background: rgba(240,165,0,0.1);
+      border: 1px solid rgba(240,165,0,0.25);
+      box-shadow: 0 0 24px rgba(240,165,0,0.15);
+    }
+    .proj-cgpa .proj-icon-wrap i { color: #f0a500; font-size: 1.8rem; }
+
+    /* Animated glow line at the bottom of card image */
+    .proj-glow-line {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      border-radius: 0;
+    }
+    .proj-lab .proj-glow-line {
+      background: linear-gradient(90deg, transparent, #4dabf7, transparent);
+      animation: glow-scan 3s ease-in-out infinite;
+    }
+    .proj-srm .proj-glow-line {
+      background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+      animation: glow-scan 3s ease-in-out infinite 1s;
+    }
+    .proj-cgpa .proj-glow-line {
+      background: linear-gradient(90deg, transparent, #f0a500, transparent);
+      animation: glow-scan 3s ease-in-out infinite 2s;
+    }
+    @keyframes glow-scan {
+      0%, 100% { opacity: 0.3; transform: scaleX(0.5); }
+      50% { opacity: 1; transform: scaleX(1); }
+    }
+
+    /* Floating particles in card bg */
+    .card-img-inner.proj-lab::before,
+    .card-img-inner.proj-srm::before,
+    .card-img-inner.proj-cgpa::before {
+      content: '';
+      position: absolute;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      top: -30px; right: -30px;
+      pointer-events: none;
+      animation: float-blob 6s ease-in-out infinite;
+    }
+    .proj-lab::before { background: radial-gradient(circle, rgba(77,171,247,0.08) 0%, transparent 70%); }
+    .proj-srm::before { background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%); animation-delay: 2s; }
+    .proj-cgpa::before { background: radial-gradient(circle, rgba(240,165,0,0.08) 0%, transparent 70%); animation-delay: 4s; }
+
+    @keyframes float-blob {
+      0%,100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(-10px, 10px) scale(1.1); }
+    }
+
+    /* Doc button style */
+    .work-btn.doc-btn {
+      background: transparent;
+      border: 1px solid rgba(132,94,247,0.35);
+      color: #845ef7;
+    }
+    .work-btn.doc-btn:hover {
+      background: rgba(132,94,247,0.1);
+      border-color: #845ef7;
+    }
+
+    /* Card overlay as a link */
+    .card-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    /* Stagger entrance animation for project cards */
+    @keyframes card-rise {
+      from { opacity: 0; transform: translateY(30px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0)   scale(1);    }
+    }
+
+    /* Project card border shimmer on hover */
+    .project-card {
+      position: relative;
+    }
+    .project-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      padding: 1px;
+      background: linear-gradient(135deg, transparent 40%, rgba(77,171,247,0.3) 60%, transparent 80%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .project-card:hover::after { opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" aria-hidden="true">
+    <div class="loading-inner">
+      <svg class="loading-logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" stroke="#4dabf7" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#4dabf7" font-family="JetBrains Mono, monospace" font-size="14" font-weight="600">SM</text>
+      </svg>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scrollToTop-btn" type="button" aria-label="Scroll to top">
+    <i class="fas fa-angle-up"></i>
+  </button>
+
+  <!-- MOBILE TOGGLE -->
+  <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-label="Toggle navigation">
+    <span class="hamburger-line line-1"></span>
+    <span class="hamburger-line line-2"></span>
+    <span class="hamburger-line line-3"></span>
+  </button>
+
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+  <div class="portfolio-container">
+
+    <!-- ═══════════════════════════════════════════
+         SIDEBAR
+    ═══════════════════════════════════════════ -->
+    <aside class="sidebar-nav" id="sidebarNav" role="navigation" aria-label="Main navigation">
+
+      <div class="brand-section">
+        <div class="logo-wrap">
+          <svg class="logo-svg" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="36" cy="36" r="33" stroke="url(#logoGradient)" stroke-width="1" stroke-dasharray="5 3" class="logo-ring-outer"/>
+            <circle cx="36" cy="36" r="26" stroke="#4dabf7" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <circle cx="36" cy="36" r="24" fill="#050505"/>
+            <path d="M24 28 C24 24 28 22 32 22 C36 22 40 24 40 28 C40 32 36 34 32 36 C28 38 24 40 24 44 C24 48 28 50 32 50 C36 50 40 48 40 44" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M44 22 L44 50 M44 22 L50 36 L56 22 M56 22 L56 50" stroke="#4dabf7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
+            <circle cx="36" cy="5" r="1.5" fill="#4dabf7" opacity="0.6"/>
+            <circle cx="36" cy="67" r="1.5" fill="#4dabf7" opacity="0.6"/>
+            <circle cx="5" cy="36" r="1.5" fill="#845ef7" opacity="0.6"/>
+            <circle cx="67" cy="36" r="1.5" fill="#845ef7" opacity="0.6"/>
+            <defs>
+              <linearGradient id="logoGradient" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#4dabf7"/>
+                <stop offset="100%" stop-color="#845ef7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="brand-name">Subash Muthu B</span>
+        <span class="brand-role">Full Stack Developer</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul class="menu-list">
+          <li class="menu-item active" data-section="main">
+            <a href="#main" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-house"></i></span>
+              <span class="menu-text">Home</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="about">
+            <a href="#about" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-user"></i></span>
+              <span class="menu-text">About</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="education">
+            <a href="#education" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-graduation-cap"></i></span>
+              <span class="menu-text">Education</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="skills">
+            <a href="#skills" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-code"></i></span>
+              <span class="menu-text">Skills</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="services">
+            <a href="#services" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-briefcase"></i></span>
+              <span class="menu-text">Services</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="experience">
+            <a href="#experience" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-chart-line"></i></span>
+              <span class="menu-text">Experience</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="certifications">
+            <a href="#certifications" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-certificate"></i></span>
+              <span class="menu-text">Certifications</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="work">
+            <a href="#work" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-folder-open"></i></span>
+              <span class="menu-text">Projects</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="testimonials">
+            <a href="#testimonials" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-quote-left"></i></span>
+              <span class="menu-text">Testimonials</span>
+            </a>
+          </li>
+          <li class="menu-item" data-section="contact">
+            <a href="#contact" class="menu-link">
+              <span class="menu-icon"><i class="fas fa-envelope"></i></span>
+              <span class="menu-text">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-social">
+        <a href="https://www.facebook.com/profile.php?id=100014763605356" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link" data-tip="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/_subash13._" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link" data-tip="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/_subash13" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-link" data-tip="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/subashmuthub" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link" data-tip="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/subash-muthu-b-8a5587349" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link" data-tip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/916380194475?text=Hello%20Subash!" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link" data-tip="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+    </aside>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CONTENT
+    ═══════════════════════════════════════════ -->
+    <main class="main-content" id="mainContent">
+
+      <!-- ─────────────────────────────
+           HERO
+      ───────────────────────────── -->
+      <section class="hero-landing" id="main">
+        <div id="particles-js" class="particles-js" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+        <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+        <div class="hero-container">
+          <div class="hero-content" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
+            <div class="availability-badge" data-aos="fade-down" data-aos-delay="100">
+              <span class="avail-dot"></span>
+              <span>Open to Work &amp; Internship Opportunities</span>
+            </div>
+            <p class="greeting-text">Hello, I'm</p>
+            <h1 class="name-highlight">SUBASH MUTHU B</h1>
+            <h2 class="role-title">
+              <span class="title-prefix">I'm a </span>
+              <span class="rotating-title" id="rotatingTitle">Full Stack Developer</span><span class="cursor-blink">|</span>
+            </h2>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+              Dedicated Full Stack Developer with proven expertise in building high-quality web solutions.
+              Experienced in React, Node.js, MongoDB, and modern cloud technologies.
+              Committed to writing clean, scalable code with exceptional attention to detail.
+            </p>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+              <div class="stat-item">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Certifications</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Dedication</span>
+              </div>
+            </div>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="500">
+              <a href="#work" class="cta-btn primary-btn">
+                <i class="fas fa-briefcase"></i> View Projects
+              </a>
+              <a href="subash resume.pdf" download="Subash_Muthu_B_Resume.pdf" class="cta-btn secondary-btn">
+                <i class="fas fa-download"></i> Download Resume
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image" data-aos="fade-left" data-aos-duration="900" data-aos-delay="300">
+            <div class="profile-frame">
+              <div class="orbit-ring orbit-1" aria-hidden="true">
+                <div class="orbit-dot"></div>
+              </div>
+              <div class="orbit-ring orbit-2" aria-hidden="true">
+                <div class="orbit-dot orbit-dot-2"></div>
+              </div>
+              <div class="profile-image-wrapper">
+                <img src="001.jpg" alt="Subash Muthu B – Full Stack Developer" class="profile-image" loading="eager">
+                <div class="status-indicator" title="Available for work">
+                  <div class="status-dot"></div>
+                </div>
+              </div>
+              <div class="profile-glow" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator" onclick="scrollToSection('about')" role="button" tabindex="0" aria-label="Scroll to About section">
+          <span>Explore More</span>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           ABOUT
+      ───────────────────────────── -->
+      <section class="about" id="about">
+        <div class="title" data-aos="fade-up">
+          <h2 class="section-title">About Me</h2>
+          <p>Who I am and what I do</p>
+        </div>
+        <div class="about-content">
+          <div class="about-img-col" data-aos="fade-right" data-aos-duration="900">
+            <div class="about-img-wrap">
+              <img src="7.jpg" alt="Subash Muthu B" loading="lazy">
+              <div class="about-img-accent" aria-hidden="true"></div>
+            </div>
+            <div class="about-floating-card" data-aos="fade-up" data-aos-delay="400">
+              <i class="fas fa-code"></i>
+              <div>
+                <strong>MERN Stack</strong>
+                <span>Full Stack Developer</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-text-col" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+            <div class="about-skills-row">
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">SQL</span>
+            </div>
+            <h2 class="content-title">Hey There! I am Subash Muthu B</h2>
+            <p class="paragraph-text">
+              I'm a highly skilled and results-driven Full Stack Developer with expertise in modern web technologies.
+              My technical proficiency spans HTML5, CSS3, JavaScript ES6+, React.js, Node.js, and database management
+              with MongoDB and SQL. I excel at delivering projects on time while maintaining the highest code quality standards.
+            </p>
+            <p class="paragraph-text">
+              With a proven track record of internships and project deliveries, I bring strong problem-solving abilities,
+              excellent communication skills, and a collaborative work ethic. I'm passionate about staying current
+              with emerging technologies and implementing best practices in every project I undertake.
+            </p>
+            <div class="about-info-grid">
+              <div class="about-info-item">
+                <span class="info-label"><i class="fas fa-map-marker-alt"></i> Location</span>
+                <span class="info-val">Kovilpatti, Tamil Nadu</span>
+              </div>
+              <div class="about-info-item">
+                <span class="info-label"><i class="fas fa-graduation-cap"></i> Degree</span>
+                <span class="info-val">B.Tech – CSE (2024–2027)</span>
+              </div>
+              <div class="about-info-item">
+                <span class="info-label"><i class="fas fa-envelope"></i> Email</span>
+                <span class="info-val">subashmuthu149@gmail.com</span>
+              </div>
+              <div class="about-info-item">
+                <span class="info-label"><i class="fas fa-phone"></i> Phone</span>
+                <span class="info-val">+91 63801 94475</span>
+              </div>
+            </div>
+            <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           EDUCATION
+      ───────────────────────────── -->
+      <section class="education" id="education">
+        <div class="container education-container">
+          <div class="title" data-aos="fade-up">
+            <h2 class="section-title">Education</h2>
+            <p>My Academic Journey</p>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Bachelor of Technology</h3>
+                  <span class="timeline-date">2024 – 2027</span>
+                </div>
+                <div class="timeline-body">
+                  <h4>Computer Science Engineering</h4>
+                  <p class="institution"><i class="fas fa-university"></i> National Engineering College</p>
+                  <p class="details">Specialising in Full Stack Development, Data Structures, Algorithms, and Modern Web Technologies. Maintaining excellent academic performance with hands-on project experience.</p>
+                  <div class="grade">CGPA: 6.8 / 10</div>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="timeline-icon"><i class="fas fa-school"></i></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Diploma in Mechanical Engineering</h3>
+                  <span class="timeline-date">2022 – 2024</span>
+                </div>
+                <div class="timeline-body">
+                  <h4>Mechanical Engineering</h4>
+                  <p class="institution"><i class="fas fa-university"></i> Lakshmi Ammal Polytechnic College</p>
+                  <p class="details">Specialised in mechanical engineering fundamentals including thermodynamics, manufacturing processes, machine design, and CAD/CAM technologies.</p>
+                  <div class="grade">CGPA: 8.1 / 10</div>
+                  <p class="edu-extra"><i class="fas fa-industry"></i> Completed Industrial Training</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           SKILLS
+      ───────────────────────────── -->
+      <section class="skills" id="skills">
+        <div class="container skills-container">
+          <div class="title" data-aos="fade-up">
+            <h2 class="section-title">My Skills</h2>
+            <p>Technologies I work with</p>
+          </div>
+          <div class="skills-layout">
+            <div class="skills-text-col" data-aos="fade-right" data-aos-delay="100">
+              <h2 class="content-title">Skills &amp; Expertise</h2>
+              <p class="paragraph-text">
+                I'm a dedicated developer with expertise in full-stack web development. My technical skills
+                include advanced proficiency in HTML5, CSS3, JavaScript, React.js, and Node.js with Express.
+                I excel in database design with MongoDB and SQL, RESTful API development, and modern
+                deployment workflows.
+              </p>
+              <div class="tech-icon-grid">
+                <div class="tech-icon-item" title="React"><i class="fab fa-react" style="color:#61dafb"></i><span>React</span></div>
+                <div class="tech-icon-item" title="Node.js"><i class="fab fa-node-js" style="color:#68a063"></i><span>Node.js</span></div>
+                <div class="tech-icon-item" title="JavaScript"><i class="fab fa-js" style="color:#f7df1e"></i><span>JS</span></div>
+                <div class="tech-icon-item" title="HTML5"><i class="fab fa-html5" style="color:#e34f26"></i><span>HTML5</span></div>
+                <div class="tech-icon-item" title="CSS3"><i class="fab fa-css3-alt" style="color:#2965f1"></i><span>CSS3</span></div>
+                <div class="tech-icon-item" title="Java"><i class="fab fa-java" style="color:#f89820"></i><span>Java</span></div>
+                <div class="tech-icon-item" title="Git"><i class="fab fa-git-alt" style="color:#f05032"></i><span>Git</span></div>
+                <div class="tech-icon-item" title="Database"><i class="fas fa-database" style="color:#4dabf7"></i><span>MongoDB</span></div>
+              </div>
+              <a href="#work" class="btn"><i class="fas fa-folder-open"></i> View Projects</a>
+            </div>
+            <div class="skills-bars-col" data-aos="fade-left" data-aos-delay="100">
+              <div class="bar">
+                <div class="info">
+                  <span><i class="fab fa-html5" style="color:#e34f26"></i> HTML</span>
+                  <span>95%</span>
+                </div>
+                <div class="line html"></div>
+              </div>
+              <div class="bar">
+                <div class="info">
+                  <span><i class="fab fa-css3-alt" style="color:#2965f1"></i> CSS</span>
+                  <span>90%</span>
+                </div>
+                <div class="line css"></div>
+              </div>
+              <div class="bar">
+                <div class="info">
+                  <span><i class="fab fa-js" style="color:#f7df1e"></i> JavaScript</span>
+                  <span>80%</span>
+                </div>
+                <div class="line javascript"></div>
+              </div>
+              <div class="bar">
+                <div class="info">
+                  <span><i class="fab fa-java" style="color:#f89820"></i> Java</span>
+                  <span>75%</span>
+                </div>
+                <div class="line java"></div>
+              </div>
+              <div class="bar">
+                <div class="info">
+                  <span><i class="fas fa-database" style="color:#4dabf7"></i> SQL / MongoDB</span>
+                  <span>80%</span>
+                </div>
+                <div class="line sql"></div>
+              </div>
+              <div class="bar">
+                <div class="info">
+                  <span><i class="fab fa-react" style="color:#61dafb"></i> React.js</span>
+                  <span>75%</span>
+                </div>
+                <div class="line react"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           SERVICES
+      ───────────────────────────── -->
+      <section class="services" id="services">
+        <div class="container services-container">
+          <div class="title" data-aos="fade-up">
+            <h2 class="section-title">Professional Services</h2>
+            <p>Delivering modern web solutions with exceptional quality and reliability.</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-number">01</div>
+              <div class="service-icon"><i class="fas fa-code"></i></div>
+              <h3>Full Stack Development</h3>
+              <p>Expert development of scalable web applications using React, Node.js, Express, and MongoDB. Specialising in performance optimisation and clean architecture.</p>
+              <div class="service-tags">
+                <span>React</span><span>Node.js</span><span>MongoDB</span>
+              </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-number">02</div>
+              <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+              <h3>UI/UX Design &amp; Dev</h3>
+              <p>Crafting intuitive and visually stunning user interfaces with focus on user experience optimisation, accessibility, and responsive design principles.</p>
+              <div class="service-tags">
+                <span>HTML5</span><span>CSS3</span><span>Figma</span>
+              </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-number">03</div>
+              <div class="service-icon"><i class="fas fa-server"></i></div>
+              <h3>Backend &amp; API Development</h3>
+              <p>Building robust RESTful APIs and backend services with Node.js, Express, and database integration. Secure, scalable, and well-documented solutions.</p>
+              <div class="service-tags">
+                <span>Express</span><span>REST API</span><span>SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           EXPERIENCE
+      ───────────────────────────── -->
+      <section class="experience" id="experience">
+        <div class="container experience-container">
+          <div class="title" data-aos="fade-up">
+            <h2 class="section-title">Experience</h2>
+            <p>My Professional Journey</p>
+          </div>
+          <div class="experience-grid">
+
+            <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="exp-card-top">
+                <div class="company-logo codsoft-logo">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+                    <rect x="4" y="10" width="14" height="20" rx="2" stroke="#4dabf7" stroke-width="2" fill="none"/>
+                    <path d="M22 15 L36 20 L22 25" stroke="#845ef7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <div class="exp-info">
+                  <h3>Web Development Intern</h3>
+                  <h4>CodSoft</h4>
+                  <span class="duration"><i class="fas fa-calendar-alt"></i> Oct 2024 – Nov 2024</span>
+                </div>
+                <div class="exp-type-badge remote">Remote</div>
+              </div>
+              <div class="exp-body">
+                <p>Completed web development tasks including building responsive landing pages, calculator app, portfolio website, and tribute page using HTML, CSS, and JavaScript. Developed strong fundamentals and delivered all tasks within deadlines.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Responsive Design</span>
+                </div>
+              </div>
+              <div class="exp-proof">
+                <a href="Proof/Codsoft_certificate.pdf" target="_blank" class="proof-link">
+                  <i class="fas fa-certificate"></i> View Certificate
+                </a>
+              </div>
+            </div>
+
+            <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="exp-card-top">
+                <div class="company-logo prodigy-logo">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+                    <circle cx="20" cy="20" r="14" stroke="#00d4ff" stroke-width="2" fill="none"/>
+                    <path d="M14 20 L18 24 L26 16" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="exp-info">
+                  <h3>Web Development Intern</h3>
+                  <h4>Prodigy InfoTech</h4>
+                  <span class="duration"><i class="fas fa-calendar-alt"></i> Nov 2024 – Dec 2024</span>
+                </div>
+                <div class="exp-type-badge remote">Remote</div>
+              </div>
+              <div class="exp-body">
+                <p>Worked on web development tasks covering responsive web design, interactive UI components, and JavaScript fundamentals. Built multiple projects including a Tic-Tac-Toe game, weather app UI, and a stopwatch — demonstrating strong frontend skills.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML/CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">DOM Manipulation</span>
+                  <span class="tech-tag">API Integration</span>
+                </div>
+              </div>
+              <div class="exp-proof">
+                <a href="Proof/Certificate..pdf" target="_blank" class="proof-link">
+                  <i class="fas fa-certificate"></i> View Certificate
+                </a>
+              </div>
+            </div>
+
+            <div class="experience-card featured-exp" data-aos="fade-up" data-aos-delay="300">
+              <div class="exp-featured-badge">Featured</div>
+              <div class="exp-card-top">
+                <div class="company-logo jpmorgan-logo">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+                    <rect x="4" y="4" width="32" height="32" rx="4" fill="none" stroke="#f0a500" stroke-width="2"/>
+                    <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" fill="#f0a500" font-size="11" font-weight="700" font-family="Arial,sans-serif">JP</text>
+                  </svg>
+                </div>
+                <div class="exp-info">
+                  <h3>Software Engineering Virtual</h3>
+                  <h4>JP Morgan Chase &amp; Co. (Forage)</h4>
+                  <span class="duration"><i class="fas fa-calendar-alt"></i> 2025</span>
+                </div>
+                <div class="exp-type-badge virtual">Virtual</div>
+              </div>
+              <div class="exp-body">
+                <p>Completed JP Morgan Chase's Software Engineering virtual experience on Forage. Worked with financial data feeds, set up a developer environment, fixed broken files in the repository, and used JPMorgan's open source library Perspective to display live graphs for trading data.</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Perspective</span>
+                  <span class="tech-tag">Git</span>
+                </div>
+              </div>
+              <div class="exp-proof">
+                <a href="Proof/certificate of forge.jp.pdf" target="_blank" class="proof-link">
+                  <i class="fas fa-certificate"></i> View Certificate
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           CERTIFICATIONS
+      ───────────────────────────── -->
+      <section class="certifications" id="certifications">
+        <div class="container certifications-container">
+          <div class="title" data-aos="fade-up">
+            <h2 class="section-title">Certifications</h2>
+            <p>Professional Achievements &amp; Credentials</p>
+          </div>
+          <div class="certifications-grid">
+
+            <div class="certification-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="cert-header">
+                <div class="cert-badge mongodb-badge">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                    <path d="M20 4 C20 4 12 12 12 22 C12 28 15.5 33 20 36 C24.5 33 28 28 28 22 C28 12 20 4 20 4Z" fill="#00ED64" opacity="0.9"/>
+                    <path d="M20 36 L20 38" stroke="#00ED64" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="20" cy="38" r="1" fill="#00ED64"/>
+                  </svg>
+                </div>
+                <div class="cert-issuer-info">
+                  <span class="cert-issuer">MongoDB University</span>
+                  <span class="cert-date">2024</span>
+                </div>
+              </div>
+              <h3>MongoDB Developer Certificate</h3>
+              <p class="cert-description">Certification covering MongoDB fundamentals, CRUD operations, aggregation framework, indexing strategies, and schema design for modern applications.</p>
+              <div class="cert-footer">
+                <div class="cert-skills">
+                  <span>NoSQL</span><span>CRUD</span><span>Aggregation</span>
+                </div>
+                <a href="Proof/MangoDB.pdf" target="_blank" class="cert-verify">
+                  <i class="fas fa-external-link-alt"></i> Verify
+                </a>
+              </div>
+            </div>
+
+            <div class="certification-card" data-aos="fade-up" data-aos-delay="150">
+              <div class="cert-header">
+                <div class="cert-badge codsoft-cert-badge">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                    <rect x="4" y="10" width="14" height="20" rx="2" stroke="#4dabf7" stroke-width="2" fill="none"/>
+                    <path d="M22 15 L36 20 L22 25" stroke="#845ef7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <div class="cert-issuer-info">
+                  <span class="cert-issuer">CodSoft</span>
+                  <span class="cert-date">Nov 2024</span>
+                </div>
+              </div>
+              <h3>Web Development Internship Certificate</h3>
+              <p class="cert-description">Completed a one-month web development internship program. Built multiple real-world projects including portfolio website, calculator, and landing pages using HTML, CSS, and JavaScript.</p>
+              <div class="cert-footer">
+                <div class="cert-skills">
+                  <span>HTML</span><span>CSS</span><span>JS</span>
+                </div>
+                <a href="Proof/Codsoft_certificate.pdf" target="_blank" class="cert-verify">
+                  <i class="fas fa-external-link-alt"></i> Verify
+                </a>
+              </div>
+            </div>
+
+            <div class="certification-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="cert-header">
+                <div class="cert-badge prodigy-cert-badge">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                    <circle cx="20" cy="20" r="14" stroke="#00d4ff" stroke-width="2" fill="none"/>
+                    <path d="M13 20 L17 24 L27 14" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="cert-issuer-info">
+                  <span class="cert-issuer">Prodigy InfoTech</span>
+                  <span class="cert-date">Dec 2024</span>
+                </div>
+              </div>
+              <h3>Web Development Internship Certificate</h3>
+              <p class="cert-description">Completed web development internship covering responsive design, JavaScript projects, and interactive UI development. Delivered 5 projects including games and utility apps.</p>
+              <div class="cert-footer">
+                <div class="cert-skills">
+                  <span>HTML/CSS</span><span>JavaScript</span><span>UI/UX</span>
+                </div>
+                <a href="Proof/Certificate..pdf" target="_blank" class="cert-verify">
+                  <i class="fas fa-external-link-alt"></i> Verify
+                </a>
+              </div>
+            </div>
+
+            <div class="certification-card" data-aos="fade-up" data-aos-delay="250">
+              <div class="cert-header">
+                <div class="cert-badge cisco-badge">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                    <rect x="4" y="16" width="6" height="12" rx="1" fill="#00bceb"/>
+                    <rect x="13" y="10" width="6" height="18" rx="1" fill="#00bceb"/>
+                    <rect x="22" y="14" width="6" height="14" rx="1" fill="#00bceb"/>
+                    <rect x="31" y="18" width="6" height="10" rx="1" fill="#00bceb" opacity="0.6"/>
+                  </svg>
+                </div>
+                <div class="cert-issuer-info">
+                  <span class="cert-issuer">Cisco Networking Academy</span>
+                  <span class="cert-date">2024</span>
+                </div>
+              </div>
+              <h3>Cisco Networking Fundamentals</h3>
+              <p class="cert-description">Completed Cisco's networking fundamentals certification covering network infrastructure, protocols, cybersecurity essentials, and IT support fundamentals through Cisco NetAcad.</p>
+              <div class="cert-footer">
+                <div class="cert-skills">
+                  <span>Networking</span><span>Cybersecurity</span><span>IT</span>
+                </div>
+                <a href="Proof/Cisco certificate.pdf" target="_blank" class="cert-verify">
+                  <i class="fas fa-external-link-alt"></i> Verify
+                </a>
+              </div>
+            </div>
+
+            <div class="certification-card featured-cert" data-aos="fade-up" data-aos-delay="300">
+              <div class="cert-featured-badge">Industry</div>
+              <div class="cert-header">
+                <div class="cert-badge jpmorgan-badge">
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                    <rect x="4" y="4" width="32" height="32" rx="4" fill="none" stroke="#f0a500" stroke-width="2"/>
+                    <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" fill="#f0a500" font-size="11" font-weight="700" font-family="Arial,sans-serif">JP</text>
+                  </svg>
+                </div>
+                <div class="cert-issuer-info">
+                  <span class="cert-issuer">JP Morgan Chase &amp; Co.</span>
+                  <span class="cert-date">2025</span>
+                </div>
+              </div>
+              <h3>Software Engineering Virtual Experience</h3>
+              <p class="cert-description">JP Morgan Chase's Software Engineering virtual experience program via Forage. Worked with real financial data, fixed repository code, and built live data visualisation using Perspective library.</p>
+              <div class="cert-footer">
+                <div class="cert-skills">
+                  <span>Python</span><span>React</span><span>TypeScript</span>
+                </div>
+                <a href="Proof/certificate of forge.jp.pdf" target="_blank" class="cert-verify">
+                  <i class="fas fa-external-link-alt"></i> Verify
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           PROJECTS  ← UPDATED
+      ───────────────────────────── -->
+      <section class="work" id="work">
+        <div class="container work-container">
+          <div class="title" data-aos="fade-up">
+            <h2 class="section-title">Featured Projects</h2>
+            <p>Real web applications built with modern development practices</p>
+          </div>
+          <div class="projects-grid">
+
+            <!-- Project 1: Laboratory Management System -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-img">
+                <div class="card-window-bar">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="card-url">mwt-project-five.vercel.app</span>
+                </div>
+                <div class="card-img-inner proj-lab">
+                  <div class="proj-icon-wrap">
+                    <i class="fas fa-flask"></i>
+                  </div>
+                  <div class="proj-glow-line"></div>
+                </div>
+                <a href="https://mwt-project-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-overlay">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+              <div class="project-info">
+                <div class="project-header">
+                  <h3>Laboratory Management System</h3>
+                  <span class="proj-status live"><span class="proj-status-dot"></span>Live</span>
+                </div>
+                <p>A full-featured lab management web application for handling equipment booking, student records, experiment logs, and inventory tracking with role-based access control.</p>
+                <div class="project-tech">
+                  <span class="tech-badge react">React</span>
+                  <span class="tech-badge nodejs">Node.js</span>
+                  <span class="tech-badge mongodb">MongoDB</span>
+                  <span class="tech-badge">Express</span>
+                </div>
+                <div class="project-buttons">
+                  <a href="https://mwt-project-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-btn primary">
+                    <i class="fas fa-eye"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/subashmuthub/Labaratory-Management-System.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary">
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                  <a href="Documentation/LabMS - REPORT.pdf" target="_blank" rel="noopener noreferrer" class="work-btn doc-btn">
+                    <i class="fas fa-file-alt"></i> Docs
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Student Result Management -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-img">
+                <div class="card-window-bar">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="card-url">student-result-management.onrender.com</span>
+                </div>
+                <div class="card-img-inner proj-srm">
+                  <div class="proj-icon-wrap">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="proj-glow-line"></div>
+                </div>
+                <a href="https://student-result-management-1olv.onrender.com/" target="_blank" rel="noopener noreferrer" class="card-overlay">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+              <div class="project-info">
+                <div class="project-header">
+                  <h3>Student Result Management System</h3>
+                  <span class="proj-status live"><span class="proj-status-dot"></span>Live</span>
+                </div>
+                <p>A comprehensive student result portal for faculty to enter and publish marks while students view results, grade sheets, and performance analytics in real time.</p>
+                <div class="project-tech">
+                  <span class="tech-badge react">React</span>
+                  <span class="tech-badge nodejs">Node.js</span>
+                  <span class="tech-badge mongodb">MongoDB</span>
+                  <span class="tech-badge">REST API</span>
+                </div>
+                <div class="project-buttons">
+                  <a href="https://student-result-management-1olv.onrender.com/" target="_blank" rel="noopener noreferrer" class="work-btn primary">
+                    <i class="fas fa-eye"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/subashmuthub/student-result-management.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary">
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                  <a href="Documentation/SRM - REPORT.pdf" target="_blank" rel="noopener noreferrer" class="work-btn doc-btn">
+                    <i class="fas fa-file-alt"></i> Docs
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: CGPA Calculator -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-img">
+                <div class="card-window-bar">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="card-url">cgpa-calculator.onrender.com</span>
+                </div>
+                <div class="card-img-inner proj-cgpa">
+                  <div class="proj-icon-wrap">
+                    <i class="fas fa-calculator"></i>
+                  </div>
+                  <div class="proj-glow-line"></div>
+                </div>
+                <a href="https://cgpa-calculator-nhsw.onrender.com/login" target="_blank" rel="noopener noreferrer" class="card-overlay">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+              <div class="project-info">
+                <div class="project-header">
+                  <h3>CGPA Calculator</h3>
+                  <span class="proj-status live"><span class="proj-status-dot"></span>Live</span>
+                </div>
+                <p>A smart academic GPA and CGPA calculator with semester-wise grade entry, credit-weighted calculations, and visual performance tracking for students.</p>
+                <div class="project-tech">
+                  <span class="tech-badge nodejs">Node.js</span>
+                  <span class="tech-badge mongodb">MongoDB</span>
+                  <span class="tech-badge">Express</span>
+                  <span class="tech-badge">EJS</span>
+                </div>
+                <div class="project-buttons">
+                  <a href="https://cgpa-calculator-nhsw.onrender.com/login" target="_blank" rel="noopener noreferrer" class="work-btn primary">
+                    <i class="fas fa-eye"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/subashmuthub/CGPA-Calculator.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary">
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           TESTIMONIALS
+      ───────────────────────────── -->
+      <section class="testimonials" id="testimonials">
+        <div class="container testimonials-container">
+          <div class="title" data-aos="fade-up">
+            <h2 class="section-title">Testimonials</h2>
+            <p>What mentors and colleagues say</p>
+          </div>
+          <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="quote">Subash delivered high-quality work consistently during his internship. His attention to detail and ability to pick up new technologies quickly is impressive. A reliable and hardworking developer.</p>
+              <div class="testimonial-author">
+                <div class="author-avatar"><i class="fas fa-user-tie"></i></div>
+                <div>
+                  <strong class="author-name">Internship Mentor</strong>
+                  <span class="author-role">CodSoft</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="quote">Technically strong, very detail-oriented and always delivers on time. Subash's code is clean, well-structured and he communicates clearly throughout the project. Highly recommended!</p>
+              <div class="testimonial-author">
+                <div class="author-avatar"><i class="fas fa-user-tie"></i></div>
+                <div>
+                  <strong class="author-name">Project Supervisor</strong>
+                  <span class="author-role">Prodigy InfoTech</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           CONTACT
+      ───────────────────────────── -->
+      <section class="contact" id="contact">
+        <div class="container contact-container">
+          <div class="title" data-aos="fade-up">
+            <h2 class="section-title">Let's Build Something Amazing</h2>
+            <p>Ready to discuss your next project? Let's connect and turn your vision into reality.</p>
+          </div>
+
+          <div class="contact-info-row" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-info-card">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h3>Location</h3>
+                <span>Kovilpatti, Tamil Nadu, India</span>
+                <small>Available for remote collaboration worldwide</small>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <h3>Phone</h3>
+                <span>+91 63801 94475</span>
+                <small>Available Mon–Fri, 9 AM – 6 PM IST</small>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h3>Email</h3>
+                <span>subashmuthu149@gmail.com</span>
+                <small>Response within 24 hours guaranteed</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap" data-aos="fade-up" data-aos-delay="200">
+            <div class="form-header">
+              <h3>Start Your Project Today</h3>
+              <p>Fill out the form below and I'll get back to you within 24 hours.</p>
+            </div>
+            <form action="https://formspree.io/f/xpwzgkqr" method="POST" class="contact-form">
+              <div class="form-row">
+                <div class="input-box">
+                  <i class="fas fa-user input-ico"></i>
+                  <input type="text" name="name" placeholder="Full Name" required autocomplete="name">
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope input-ico"></i>
+                  <input type="email" name="_replyto" placeholder="Email Address" required autocomplete="email">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="input-box">
+                  <i class="fas fa-phone input-ico"></i>
+                  <input type="tel" name="phone" placeholder="Phone Number (Optional)" autocomplete="tel">
+                </div>
+                <div class="input-box select-box">
+                  <i class="fas fa-folder input-ico"></i>
+                  <select name="project_type" required>
+                    <option value="">Select Project Type</option>
+                    <option value="website">Website Development</option>
+                    <option value="webapp">Web Application</option>
+                    <option value="ecommerce">E-commerce Platform</option>
+                    <option value="consultation">Technical Consultation</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-box full">
+                <i class="fas fa-comment input-ico textarea-ico"></i>
+                <textarea name="message" placeholder="Tell me about your project requirements..." required></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="New Project Inquiry – Portfolio">
+              <input type="hidden" name="_next" value="thank-you.html">
+              <button type="submit" class="send-btn">
+                <i class="fas fa-paper-plane"></i> Send Project Inquiry
+              </button>
+              <p class="form-note"><i class="fas fa-lock"></i> Your information is secure and will never be shared with third parties.</p>
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────
+           FOOTER
+      ───────────────────────────── -->
+      <footer class="footer">
+        <div class="container footer-container">
+          <div class="footer-content">
+            <div class="footer-brand-col">
+              <div class="footer-logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                  <circle cx="24" cy="24" r="22" stroke="#4dabf7" stroke-width="1" stroke-dasharray="4 2" opacity="0.4"/>
+                  <circle cx="24" cy="24" r="17" fill="#050505" stroke="#4dabf7" stroke-width="1" opacity="0.3"/>
+                  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#4dabf7" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600">SM</text>
+                </svg>
+              </div>
+              <h2>Subash Muthu B</h2>
+              <p class="footer-tagline">Full Stack Developer &amp; Technical Enthusiast</p>
+              <div class="footer-social">
+                <a href="https://github.com/subashmuthub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/subash-muthu-b-8a5587349" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/_subash13" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/_subash13._" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="footer-links-col">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                <li><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+                <li><a href="#experience"><i class="fas fa-chevron-right"></i> Experience</a></li>
+                <li><a href="#work"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-links-col">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#services"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                <li><a href="#services"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                <li><a href="#services"><i class="fas fa-chevron-right"></i> Backend &amp; API</a></li>
+                <li><a href="#services"><i class="fas fa-chevron-right"></i> Technical Consulting</a></li>
+              </ul>
+            </div>
+            <div class="footer-contact-col">
+              <h3>Contact Info</h3>
+              <div class="footer-contact-list">
+                <p><i class="fas fa-envelope"></i> subashmuthu149@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 63801 94475</p>
+                <p><i class="fas fa-map-marker-alt"></i> Kovilpatti, Tamil Nadu, India</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 Subash Muthu B. All rights reserved. Built with <span style="color:#e25555">♥</span> using HTML, CSS &amp; JavaScript.</p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div><!-- end portfolio-container -->
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/all-scripts.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Subash Muthu B",
+    "jobTitle": "Full Stack Developer",
+    "url": "https://subashmuthub.dev",
+    "email": "subashmuthu149@gmail.com",
+    "telephone": "+916380194475",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kovilpatti",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "India"
+    },
+    "sameAs": [
+      "https://github.com/subashmuthub",
+      "https://www.linkedin.com/in/subash-muthu-b-8a5587349"
+    ]
+  }
+  </script>
+
+</body>
+</html>
