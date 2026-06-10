@@ -58,7 +58,8 @@ function initCustomCursor() {
   let followerX = 0, followerY = 0;
 
   document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
     cursor.style.left = mouseX + 'px';
     cursor.style.top  = mouseY + 'px';
   }, { passive: true });
@@ -74,7 +75,6 @@ function initCustomCursor() {
   }
   animateFollower();
 
-  // Scale on hover over links/buttons
   document.querySelectorAll('a, button, .cta-btn, .service-card, .project-card').forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.style.transform = 'translate(-50%,-50%) scale(2)';
@@ -94,15 +94,20 @@ function initCustomCursor() {
 ───────────────────────────── */
 function initParticles() {
   if (typeof particlesJS === 'undefined') return;
+
+  // Respect light theme — use darker particles in light mode
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  const color   = isLight ? '#1971c2' : '#4dabf7';
+
   try {
     particlesJS('particles-js', {
       particles: {
         number: { value: 45, density: { enable: true, value_area: 900 } },
-        color: { value: '#4dabf7' },
+        color: { value: color },
         shape: { type: 'circle' },
-        opacity: { value: 0.25, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.05 } },
+        opacity: { value: isLight ? 0.18 : 0.25, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.05 } },
         size: { value: 2, random: true },
-        line_linked: { enable: true, distance: 140, color: '#4dabf7', opacity: 0.06, width: 1 },
+        line_linked: { enable: true, distance: 140, color: color, opacity: isLight ? 0.06 : 0.06, width: 1 },
         move: { enable: true, speed: 1, random: true, out_mode: 'out', bounce: false }
       },
       interactivity: {
@@ -258,16 +263,14 @@ function initStatCounters() {
 }
 
 /* ─────────────────────────────
-   SKILL BARS INTERSECTION
+   SKILL BARS
 ───────────────────────────── */
 function initSkillBars() {
   const bars = $$('.line');
   if (!bars.length) return;
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('animate');
     });
   }, { threshold: 0.3 });
   bars.forEach(b => observer.observe(b));
@@ -307,7 +310,7 @@ function initProfileEffects() {
 }
 
 /* ─────────────────────────────
-   GLITCH TEXT EFFECT (name)
+   GLITCH EFFECT (name)
 ───────────────────────────── */
 function initGlitchEffect() {
   const name = $('.name-highlight');
@@ -324,7 +327,7 @@ function initGlitchEffect() {
 window.showNotification = (message, type = 'success') => {
   const n = document.createElement('div');
   n.style.cssText = `
-    position:fixed; top:1.25rem; right:1.25rem;
+    position:fixed; top:1.25rem; right:5rem;
     background:${type === 'error' ? '#ef4444' : '#4dabf7'};
     color:#000; padding:.875rem 1.4rem;
     border-radius:8px;
@@ -352,22 +355,7 @@ function initAOS() {
 }
 
 /* ─────────────────────────────
-   FORM SUBMIT
-───────────────────────────── */
-function initContactForm() {
-  const form = $('.contact-form');
-  if (!form) return;
-  form.addEventListener('submit', () => {
-    const btn = form.querySelector('.send-btn');
-    if (btn) {
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      btn.disabled = true;
-    }
-  });
-}
-
-/* ─────────────────────────────
-   SMOOTH SECTION TRANSITIONS
+   SECTION TRANSITIONS
 ───────────────────────────── */
 function initSectionObserver() {
   const sections = $$('section');
@@ -383,6 +371,68 @@ function initSectionObserver() {
     s.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(s);
   });
+}
+
+/* ─────────────────────────────
+   PROJECT SCREENSHOT FALLBACK
+   (if image fails → show icon)
+───────────────────────────── */
+function initProjectScreenshots() {
+  $$('.proj-screenshot').forEach(img => {
+    img.addEventListener('error', function() {
+      this.classList.add('img-error');
+      const iconWrap = this.parentElement.querySelector('.proj-icon-wrap');
+      if (iconWrap) {
+        iconWrap.style.display = 'flex';
+        // restore themed background when icon is shown
+        const parent = this.parentElement;
+        if (parent.classList.contains('proj-lab')) {
+          parent.style.background = 'linear-gradient(135deg,rgba(77,171,247,0.06),rgba(132,94,247,0.06))';
+        } else if (parent.classList.contains('proj-srm')) {
+          parent.style.background = 'linear-gradient(135deg,rgba(0,212,255,0.06),rgba(0,255,136,0.05))';
+        } else if (parent.classList.contains('proj-cgpa')) {
+          parent.style.background = 'linear-gradient(135deg,rgba(240,165,0,0.06),rgba(255,80,80,0.05))';
+        }
+      }
+    });
+  });
+}
+
+/* ─────────────────────────────
+   CMD HINT FADE OUT
+───────────────────────────── */
+function initCmdHint() {
+  const hint = document.getElementById('cmdHint');
+  if (!hint) return;
+  // Fade out hint after 6 seconds on desktop
+  if (!window.matchMedia('(hover: none)').matches) {
+    setTimeout(() => {
+      hint.style.transition = 'opacity 1s ease';
+      hint.style.opacity = '0';
+      setTimeout(() => hint.style.display = 'none', 1000);
+    }, 6000);
+  } else {
+    // Hide entirely on touch devices
+    hint.style.display = 'none';
+  }
+}
+
+/* ─────────────────────────────
+   THEME CHANGE → REINIT PARTICLES
+───────────────────────────── */
+function observeThemeChange() {
+  const html = document.documentElement;
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(m => {
+      if (m.attributeName === 'data-theme') {
+        // Destroy and reinit particles with correct color
+        const canvas = document.querySelector('#particles-js canvas');
+        if (canvas) canvas.remove();
+        initParticles();
+      }
+    });
+  });
+  observer.observe(html, { attributes: true });
 }
 
 /* ─────────────────────────────
@@ -408,6 +458,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardTilt();
   initProfileEffects();
   initGlitchEffect();
-  initContactForm();
   initSectionObserver();
+  initProjectScreenshots();
+  initCmdHint();
+  observeThemeChange();
 });
