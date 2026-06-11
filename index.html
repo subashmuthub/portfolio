@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="001.jpg">
   <title>Subash Muthu B – Full Stack Developer | Portfolio</title>
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="icon" href="Proof/SM logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -307,6 +307,117 @@
     @keyframes socialBounce { 0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)} }
 
     /* ═══════════════════════════════════════
+       SM LOGO — IMAGE + ANIMATION SYSTEM
+    ═══════════════════════════════════════ */
+    .sm-logo-wrap {
+      width: 80px; height: 80px;
+      margin: 0 auto 0.75rem;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sm-logo-img {
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: relative; z-index: 3;
+      filter: drop-shadow(0 0 12px rgba(77,171,247,0.55));
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .sm-logo-wrap:hover .sm-logo-img {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 22px rgba(77,171,247,0.9));
+    }
+    .sm-ring-outer {
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(77,171,247,0.45);
+      animation: sm-spin-cw 10s linear infinite;
+      z-index: 1;
+    }
+    .sm-ring-outer::after {
+      content: '';
+      position: absolute; top: -3px; left: 50%;
+      transform: translateX(-50%);
+      width: 6px; height: 6px;
+      background: #4dabf7;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #4dabf7;
+    }
+    .sm-ring-inner {
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      border: 1px solid rgba(132,94,247,0.3);
+      animation: sm-spin-ccw 7s linear infinite;
+      z-index: 1;
+    }
+    .sm-ring-inner::after {
+      content: '';
+      position: absolute; bottom: -3px; left: 50%;
+      transform: translateX(-50%);
+      width: 5px; height: 5px;
+      background: #845ef7;
+      border-radius: 50%;
+      box-shadow: 0 0 7px #845ef7;
+    }
+    .sm-glow {
+      position: absolute; inset: 6px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(77,171,247,0.12) 0%, transparent 70%);
+      animation: sm-pulse 3.5s ease-in-out infinite;
+      z-index: 2;
+    }
+    @keyframes sm-spin-cw { to { transform: rotate(360deg); } }
+    @keyframes sm-spin-ccw { to { transform: rotate(-360deg); } }
+    @keyframes sm-pulse {
+      0%,100% { opacity: 0.5; transform: scale(0.92); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+    .sm-loading-wrap {
+      position: relative;
+      width: 90px; height: 90px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .sm-loading-img {
+      width: 66px; height: 66px;
+      border-radius: 50%;
+      object-fit: cover;
+      animation: sm-loading-pop 1.8s ease forwards;
+      filter: drop-shadow(0 0 14px rgba(77,171,247,0.7));
+      position: relative; z-index: 2;
+    }
+    .sm-loading-ring {
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(77,171,247,0.55);
+      animation: sm-spin-cw 2.5s linear infinite;
+    }
+    @keyframes sm-loading-pop {
+      0% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
+      60% { opacity: 1; transform: scale(1.1) rotate(5deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    .sm-footer-img {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: drop-shadow(0 0 8px rgba(77,171,247,0.5));
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .sm-footer-img:hover {
+      filter: drop-shadow(0 0 16px rgba(77,171,247,0.9));
+      transform: scale(1.1);
+    }
+    [data-theme="light"] .sm-ring-outer { border-color: rgba(25,113,194,0.45); }
+    [data-theme="light"] .sm-ring-outer::after { background: #1971c2; box-shadow: 0 0 8px #1971c2; }
+    [data-theme="light"] .sm-ring-inner { border-color: rgba(112,72,232,0.3); }
+    [data-theme="light"] .sm-ring-inner::after { background: #7048e8; box-shadow: 0 0 7px #7048e8; }
+    [data-theme="light"] .sm-glow { background: radial-gradient(circle, rgba(25,113,194,0.1) 0%, transparent 70%); }
+    [data-theme="light"] .sm-logo-img { filter: drop-shadow(0 0 10px rgba(25,113,194,0.45)); }
+    [data-theme="light"] .sm-loading-img { filter: drop-shadow(0 0 12px rgba(25,113,194,0.6)); }
+
+    /* ═══════════════════════════════════════
        LOADING SCREEN LOGO SPIN + PULSE
     ═══════════════════════════════════════ */
     .loading-logo { animation: spin-slow 2.5s linear infinite, logoFade 1.8s ease forwards !important; }
@@ -338,10 +449,10 @@
   <!-- LOADING SCREEN -->
   <div class="loading-screen" aria-hidden="true">
     <div class="loading-inner">
-      <svg class="loading-logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="30" r="28" stroke="#4dabf7" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#4dabf7" font-family="JetBrains Mono, monospace" font-size="14" font-weight="600">SM</text>
-      </svg>
+      <div class="sm-loading-wrap">
+        <div class="sm-loading-ring"></div>
+        <img src="Proof/SM logo.png" alt="SM Logo" class="sm-loading-img" loading="eager">
+      </div>
       <div class="loader-bar"><div class="loader-fill"></div></div>
     </div>
   </div>
@@ -402,23 +513,12 @@
 
       <div class="brand-section">
         <div class="logo-wrap">
-          <svg class="logo-svg" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="36" cy="36" r="33" stroke="url(#logoGradient)" stroke-width="1" stroke-dasharray="5 3" class="logo-ring-outer"/>
-            <circle cx="36" cy="36" r="26" stroke="#4dabf7" stroke-width="1.5" fill="none" opacity="0.3"/>
-            <circle cx="36" cy="36" r="24" fill="#050505"/>
-            <path d="M24 28 C24 24 28 22 32 22 C36 22 40 24 40 28 C40 32 36 34 32 36 C28 38 24 40 24 44 C24 48 28 50 32 50 C36 50 40 48 40 44" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <path d="M44 22 L44 50 M44 22 L50 36 L56 22 M56 22 L56 50" stroke="#4dabf7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/>
-            <circle cx="36" cy="5" r="1.5" fill="#4dabf7" opacity="0.6"/>
-            <circle cx="36" cy="67" r="1.5" fill="#4dabf7" opacity="0.6"/>
-            <circle cx="5" cy="36" r="1.5" fill="#845ef7" opacity="0.6"/>
-            <circle cx="67" cy="36" r="1.5" fill="#845ef7" opacity="0.6"/>
-            <defs>
-              <linearGradient id="logoGradient" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#4dabf7"/>
-                <stop offset="100%" stop-color="#845ef7"/>
-              </linearGradient>
-            </defs>
-          </svg>
+          <div class="sm-logo-wrap">
+            <div class="sm-ring-outer"></div>
+            <div class="sm-ring-inner"></div>
+            <div class="sm-glow"></div>
+            <img src="Proof/SM logo.png" alt="SM Logo" class="sm-logo-img" loading="eager">
+          </div>
         </div>
         <span class="brand-name">Subash Muthu B</span>
         <span class="brand-role">Full Stack Developer</span>
@@ -1045,11 +1145,7 @@
           <div class="footer-content">
             <div class="footer-brand-col">
               <div class="footer-logo">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-                  <circle cx="24" cy="24" r="22" stroke="#4dabf7" stroke-width="1" stroke-dasharray="4 2" opacity="0.4"/>
-                  <circle cx="24" cy="24" r="17" fill="#050505" stroke="#4dabf7" stroke-width="1" opacity="0.3"/>
-                  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#4dabf7" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600">SM</text>
-                </svg>
+                <img src="Proof/SM logo.png" alt="SM Logo" class="sm-footer-img" loading="lazy">
               </div>
               <h2>Subash Muthu B</h2>
               <p class="footer-tagline">Full Stack Developer &amp; Technical Enthusiast</p>
