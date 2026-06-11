@@ -18,75 +18,55 @@
   <meta name="twitter:image" content="001.jpg">
   <title>Subash Muthu B – Full Stack Developer | Portfolio</title>
 
-  <!-- Favicon emoji -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preload" href="001.jpg" as="image">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/all-styles.css">
 
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
   <style>
-    /* ══════════════════════════════════════
-       THEME TOGGLE BUTTON
-    ══════════════════════════════════════ */
+    /* ═══════════════════════════════════════
+       THEME TOGGLE
+    ═══════════════════════════════════════ */
     .theme-toggle {
-      position: fixed;
-      top: 1.25rem;
-      right: 1.25rem;
-      z-index: 1400;
-      width: 46px;
-      height: 46px;
+      position: fixed; top: 1.25rem; right: 1.25rem;
+      z-index: 1400; width: 46px; height: 46px;
       border-radius: 50%;
       border: 1.5px solid rgba(77,171,247,0.35);
-      background: var(--bg-card);
-      color: var(--accent);
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
+      background: var(--bg-card); color: var(--accent);
+      font-size: 1.1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.4s ease;
       box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
     .theme-toggle:hover {
-      background: var(--accent);
-      color: #000;
+      background: var(--accent); color: #000;
       border-color: var(--accent);
       transform: rotate(20deg) scale(1.08);
       box-shadow: 0 6px 24px rgba(77,171,247,0.4);
     }
 
-    /* ══════════════════════════════════════
+    /* ═══════════════════════════════════════
        LIGHT THEME OVERRIDES
-    ══════════════════════════════════════ */
+    ═══════════════════════════════════════ */
     [data-theme="light"] {
-      --bg-primary:    #f0f4f8;
-      --bg-secondary:  #e8edf3;
-      --bg-card:       #ffffff;
-      --bg-card-hover: #f5f8fc;
-      --accent:        #1971c2;
-      --accent-bright: #1c7ed6;
-      --accent-purple: #7048e8;
-      --accent-green:  #2f9e44;
-      --text-primary:  #1a1f2e;
-      --text-secondary:#344055;
-      --text-muted:    #6b7a99;
-      --border:        rgba(0,0,0,0.09);
-      --border-hover:  rgba(25,113,194,0.3);
-      --shadow:        0 8px 32px rgba(0,0,0,0.12);
+      --bg-primary: #f0f4f8; --bg-secondary: #e8edf3;
+      --bg-card: #ffffff; --bg-card-hover: #f5f8fc;
+      --accent: #1971c2; --accent-bright: #1c7ed6;
+      --accent-purple: #7048e8; --accent-green: #2f9e44;
+      --text-primary: #1a1f2e; --text-secondary: #344055;
+      --text-muted: #6b7a99;
+      --border: rgba(0,0,0,0.09); --border-hover: rgba(25,113,194,0.3);
+      --shadow: 0 8px 32px rgba(0,0,0,0.12);
       --shadow-accent: 0 8px 32px rgba(25,113,194,0.18);
     }
     [data-theme="light"] body { background: var(--bg-primary); }
-    [data-theme="light"] body::before {
-      background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
-    }
+    [data-theme="light"] body::before { background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px); }
     [data-theme="light"] .sidebar-nav { background: #fff; border-right-color: rgba(0,0,0,0.08); }
     [data-theme="light"] .loading-screen { background: #f0f4f8; }
     [data-theme="light"] .hero-landing { background: var(--bg-primary); }
@@ -95,373 +75,265 @@
     [data-theme="light"] .card-window-bar { background: #d8dfe8; border-bottom-color: rgba(0,0,0,0.06); }
     [data-theme="light"] .input-box input,
     [data-theme="light"] .input-box textarea,
-    [data-theme="light"] .input-box select {
-      background: #f5f8fc;
-      border-color: rgba(0,0,0,0.1);
-      color: var(--text-primary);
-    }
+    [data-theme="light"] .input-box select { background: #f5f8fc; border-color: rgba(0,0,0,0.1); color: var(--text-primary); }
     [data-theme="light"] .cursor { background: var(--accent); }
     [data-theme="light"] .cursor-follower { border-color: rgba(25,113,194,0.4); }
     [data-theme="light"] .name-highlight {
       background: linear-gradient(135deg, #1a1f2e 0%, #1971c2 55%, #7048e8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    [data-theme="light"] .scroll-progress {
-      background: linear-gradient(90deg, #1971c2, #7048e8);
-    }
-    [data-theme="light"] .theme-toggle {
-      background: #fff;
-      border-color: rgba(25,113,194,0.3);
-    }
+    [data-theme="light"] .scroll-progress { background: linear-gradient(90deg, #1971c2, #7048e8); }
+    [data-theme="light"] .theme-toggle { background: #fff; border-color: rgba(25,113,194,0.3); }
 
-    /* ══════════════════════════════════════
-       PROJECT CARD — SCREENSHOT IMAGES
-    ══════════════════════════════════════ */
-    .card-img-inner.proj-lab,
-    .card-img-inner.proj-srm,
-    .card-img-inner.proj-cgpa {
-      overflow: hidden;
-      position: relative;
-    }
-    .proj-screenshot {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      transition: transform 0.4s ease;
-      filter: brightness(0.88) saturate(1.05);
-    }
-    .project-card:hover .proj-screenshot {
-      transform: scale(1.04);
-      filter: brightness(1) saturate(1.1);
-    }
-
-    /* Fallback icon (shown if screenshot fails) */
-    .proj-icon-wrap {
-      display: none; /* hidden by default — only shown if img fails */
-    }
-    .proj-screenshot.img-error {
-      display: none;
-    }
-    .proj-screenshot.img-error ~ .proj-icon-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-    }
-
-    /* Overlay glow line */
-    .proj-glow-line {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      border-radius: 0;
-      z-index: 3;
-    }
-    .proj-lab .proj-glow-line {
-      background: linear-gradient(90deg, transparent, #4dabf7, transparent);
-      animation: glow-scan 3s ease-in-out infinite;
-    }
-    .proj-srm .proj-glow-line {
-      background: linear-gradient(90deg, transparent, #00d4ff, transparent);
-      animation: glow-scan 3s ease-in-out infinite 1s;
-    }
-    .proj-cgpa .proj-glow-line {
-      background: linear-gradient(90deg, transparent, #f0a500, transparent);
-      animation: glow-scan 3s ease-in-out infinite 2s;
-    }
-    @keyframes glow-scan {
-      0%, 100% { opacity: 0.4; transform: scaleX(0.5); }
-      50% { opacity: 1; transform: scaleX(1); }
-    }
-
-    /* Project header */
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.6rem;
-    }
+    /* ═══════════════════════════════════════
+       PROJECT CARD SCREENSHOT
+    ═══════════════════════════════════════ */
+    .card-img-inner.proj-lab,.card-img-inner.proj-srm,.card-img-inner.proj-cgpa { overflow: hidden; position: relative; }
+    .proj-screenshot { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.4s ease; filter: brightness(0.88) saturate(1.05); }
+    .project-card:hover .proj-screenshot { transform: scale(1.04); filter: brightness(1) saturate(1.1); }
+    .proj-icon-wrap { display: none; }
+    .proj-screenshot.img-error { display: none; }
+    .proj-screenshot.img-error ~ .proj-icon-wrap { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 16px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; }
+    .proj-glow-line { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; border-radius: 0; z-index: 3; }
+    .proj-lab .proj-glow-line { background: linear-gradient(90deg, transparent, #4dabf7, transparent); animation: glow-scan 3s ease-in-out infinite; }
+    .proj-srm .proj-glow-line { background: linear-gradient(90deg, transparent, #00d4ff, transparent); animation: glow-scan 3s ease-in-out infinite 1s; }
+    .proj-cgpa .proj-glow-line { background: linear-gradient(90deg, transparent, #f0a500, transparent); animation: glow-scan 3s ease-in-out infinite 2s; }
+    @keyframes glow-scan { 0%,100%{opacity:.4;transform:scaleX(.5)}50%{opacity:1;transform:scaleX(1)} }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: .5rem; margin-bottom: .6rem; }
     .project-header h3 { margin-bottom: 0; flex: 1; }
-    .proj-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.68rem;
-      font-weight: 600;
-      padding: 3px 9px;
-      border-radius: 50px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .proj-status.live {
-      background: rgba(0,255,136,0.08);
-      border: 1px solid rgba(0,255,136,0.25);
-      color: #00ff88;
-    }
-    .proj-status-dot {
-      width: 6px; height: 6px;
-      background: #00ff88;
-      border-radius: 50%;
-      animation: pulse-dot 2s ease infinite;
-    }
-
-    /* Doc button */
-    .work-btn.doc-btn {
-      background: transparent;
-      border: 1px solid rgba(132,94,247,0.35);
-      color: #845ef7;
-    }
-    .work-btn.doc-btn:hover {
-      background: rgba(132,94,247,0.1);
-      border-color: #845ef7;
-    }
-
-    /* Card overlay link */
-    .card-overlay {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      text-decoration: none;
-    }
-
-    /* Project card shimmer border */
+    .proj-status { display: inline-flex; align-items: center; gap: 5px; font-size: .68rem; font-weight: 600; padding: 3px 9px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; text-transform: uppercase; letter-spacing: .05em; }
+    .proj-status.live { background: rgba(0,255,136,.08); border: 1px solid rgba(0,255,136,.25); color: #00ff88; }
+    .proj-status-dot { width: 6px; height: 6px; background: #00ff88; border-radius: 50%; animation: pulse-dot 2s ease infinite; }
+    .work-btn.doc-btn { background: transparent; border: 1px solid rgba(132,94,247,.35); color: #845ef7; }
+    .work-btn.doc-btn:hover { background: rgba(132,94,247,.1); border-color: #845ef7; }
+    .card-overlay { display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; }
     .project-card { position: relative; }
-    .project-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius-lg);
-      padding: 1px;
-      background: linear-gradient(135deg, transparent 40%, rgba(77,171,247,0.3) 60%, transparent 80%);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
+    .project-card::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 1px; background: linear-gradient(135deg, transparent 40%, rgba(77,171,247,.3) 60%, transparent 80%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity .3s ease; pointer-events: none; }
     .project-card:hover::after { opacity: 1; }
-
-    /* ══════════════════════════════════════
-       LEETCODE IN SOCIAL
-    ══════════════════════════════════════ */
-    .social-link .leetcode-icon {
-      font-size: 0.75rem;
-      font-weight: 800;
-      font-family: 'JetBrains Mono', monospace;
-      letter-spacing: -1px;
-    }
-
-    /* ══════════════════════════════════════
-       GMAIL CONTACT CARD
-    ══════════════════════════════════════ */
-    .gmail-link {
-      color: inherit;
-      transition: color 0.2s;
-    }
+    .social-link .leetcode-icon { font-size: .75rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; letter-spacing: -1px; }
+    .gmail-link { color: inherit; transition: color .2s; }
     .gmail-link:hover { color: var(--accent); }
+    @keyframes pulse-dot { 0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,.4)}50%{box-shadow:0 0 0 7px rgba(0,255,136,0)} }
+    .form-status { padding: .75rem 1rem; border-radius: 8px; font-size: .88rem; font-weight: 600; text-align: center; display: none; }
+    .form-status.success { background: rgba(0,255,136,.08); border: 1px solid rgba(0,255,136,.25); color: #00ff88; display: block; }
+    .form-status.error { background: rgba(255,80,80,.08); border: 1px solid rgba(255,80,80,.25); color: #ff6b6b; display: block; }
 
-    /* ══════════════════════════════════════
-       TYPING CURSOR BLINK FIX
-    ══════════════════════════════════════ */
-    @keyframes pulse-dot {
-      0%,100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
-      50% { box-shadow: 0 0 0 7px rgba(0,255,136,0); }
-    }
-
-    /* ══════════════════════════════════════
-       EMAILJS FORM STATUS
-    ══════════════════════════════════════ */
-    .form-status {
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-align: center;
-      display: none;
-    }
-    .form-status.success {
-      background: rgba(0,255,136,0.08);
-      border: 1px solid rgba(0,255,136,0.25);
-      color: #00ff88;
-      display: block;
-    }
-    .form-status.error {
-      background: rgba(255,80,80,0.08);
-      border: 1px solid rgba(255,80,80,0.25);
-      color: #ff6b6b;
-      display: block;
-    }
-
-    /* ══════════════════════════════════════
-       UNIQUE FEATURE: COMMAND PALETTE
-    ══════════════════════════════════════ */
-    .cmd-hint {
-      position: fixed;
-      bottom: 5rem;
-      right: 1.5rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.4rem 0.75rem;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      z-index: 998;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      opacity: 0.6;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .cmd-hint kbd {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 4px;
-      padding: 1px 5px;
-      font-size: 0.68rem;
-    }
-
-    .cmd-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 9000;
-      backdrop-filter: blur(6px);
-      display: none;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 12vh;
-    }
+    /* ═══════════════════════════════════════
+       COMMAND PALETTE
+    ═══════════════════════════════════════ */
+    .cmd-hint { position: fixed; bottom: 5rem; right: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: .4rem .75rem; font-size: .7rem; color: var(--text-muted); z-index: 998; display: flex; align-items: center; gap: 6px; opacity: .6; font-family: 'JetBrains Mono', monospace; }
+    .cmd-hint kbd { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1); border-radius: 4px; padding: 1px 5px; font-size: .68rem; }
+    .cmd-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 9000; backdrop-filter: blur(6px); display: none; align-items: flex-start; justify-content: center; padding-top: 12vh; }
     .cmd-overlay.open { display: flex; }
-    .cmd-palette {
-      width: 560px;
-      max-width: 92vw;
-      background: var(--bg-card);
-      border: 1px solid rgba(77,171,247,0.25);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(77,171,247,0.1);
-    }
-    .cmd-search-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem 1.25rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .cmd-search-wrap i { color: var(--text-muted); font-size: 0.95rem; }
-    .cmd-input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-      color: var(--text-primary);
-      font-family: inherit;
-    }
+    .cmd-palette { width: 560px; max-width: 92vw; background: var(--bg-card); border: 1px solid rgba(77,171,247,.25); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(77,171,247,.1); }
+    .cmd-search-wrap { display: flex; align-items: center; gap: .75rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
+    .cmd-search-wrap i { color: var(--text-muted); font-size: .95rem; }
+    .cmd-input { flex: 1; background: transparent; border: none; outline: none; font-size: 1rem; color: var(--text-primary); font-family: inherit; }
     .cmd-input::placeholder { color: var(--text-muted); }
-    .cmd-esc {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 4px;
-      padding: 2px 6px;
-      font-family: 'JetBrains Mono', monospace;
-      white-space: nowrap;
-    }
-    .cmd-results {
-      max-height: 340px;
-      overflow-y: auto;
-      padding: 0.5rem;
-    }
+    .cmd-esc { font-size: .68rem; color: var(--text-muted); background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 4px; padding: 2px 6px; font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+    .cmd-results { max-height: 340px; overflow-y: auto; padding: .5rem; }
     .cmd-results::-webkit-scrollbar { width: 3px; }
-    .cmd-results::-webkit-scrollbar-thumb { background: rgba(77,171,247,0.2); border-radius: 2px; }
-    .cmd-group-label {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 0.5rem 0.75rem 0.25rem;
-      font-family: 'JetBrains Mono', monospace;
+    .cmd-results::-webkit-scrollbar-thumb { background: rgba(77,171,247,.2); border-radius: 2px; }
+    .cmd-group-label { font-size: .68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .1em; padding: .5rem .75rem .25rem; font-family: 'JetBrains Mono', monospace; }
+    .cmd-item { display: flex; align-items: center; gap: .875rem; padding: .7rem .875rem; border-radius: 8px; cursor: pointer; transition: background .15s; }
+    .cmd-item:hover,.cmd-item.active { background: rgba(77,171,247,.08); }
+    .cmd-item-icon { width: 34px; height: 34px; border-radius: 8px; background: rgba(77,171,247,.08); border: 1px solid rgba(77,171,247,.15); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: .85rem; flex-shrink: 0; }
+    .cmd-item-label { font-size: .9rem; color: var(--text-primary); font-weight: 500; }
+    .cmd-item-desc { font-size: .76rem; color: var(--text-muted); }
+    .cmd-item-arrow { margin-left: auto; color: var(--text-muted); font-size: .75rem; opacity: 0; transition: opacity .15s; }
+    .cmd-item:hover .cmd-item-arrow,.cmd-item.active .cmd-item-arrow { opacity: 1; }
+    .cmd-footer { border-top: 1px solid var(--border); padding: .6rem 1.25rem; display: flex; gap: 1.25rem; }
+    .cmd-footer span { font-size: .68rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+    .cmd-footer kbd { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 3px; padding: 1px 5px; font-size: .65rem; font-family: 'JetBrains Mono', monospace; }
+
+    /* ═══════════════════════════════════════
+       AURORA CANVAS (behind everything)
+    ═══════════════════════════════════════ */
+    #auroraCanvas {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; opacity: .55;
     }
-    .cmd-item {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      padding: 0.7rem 0.875rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.15s;
+    /* Cursor trail canvas */
+    #cursorTrailCanvas {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 9996;
     }
-    .cmd-item:hover, .cmd-item.active {
-      background: rgba(77,171,247,0.08);
+    /* Floating symbols */
+    #floatingSymbols {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 0; overflow: hidden;
     }
-    .cmd-item-icon {
-      width: 34px; height: 34px;
-      border-radius: 8px;
-      background: rgba(77,171,247,0.08);
-      border: 1px solid rgba(77,171,247,0.15);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent); font-size: 0.85rem;
-      flex-shrink: 0;
+    /* Magnetic ring */
+    #magneticRing {
+      position: fixed; width: 40px; height: 40px;
+      border: 1.5px solid rgba(77,171,247,.6);
+      border-radius: 50%; pointer-events: none; z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: width .3s ease, height .3s ease, border-color .3s ease, background .3s ease;
+      mix-blend-mode: screen;
     }
-    .cmd-item-label {
-      font-size: 0.9rem;
-      color: var(--text-primary);
-      font-weight: 500;
+    [data-theme="light"] #magneticRing { mix-blend-mode: multiply; border-color: rgba(25,113,194,.5); }
+
+    /* ═══════════════════════════════════════
+       INK REVEAL for section titles
+    ═══════════════════════════════════════ */
+    .ink-hidden { opacity: 0; clip-path: inset(0 100% 0 0); transition: opacity .7s ease, clip-path .9s cubic-bezier(.4,0,.2,1); }
+    .ink-hidden.ink-visible { opacity: 1; clip-path: inset(0 0% 0 0); }
+
+    /* ═══════════════════════════════════════
+       FLOATING SYMBOLS KEYFRAME
+    ═══════════════════════════════════════ */
+    @keyframes floatUp {
+      0%   { transform: translateY(0) rotate(0deg); opacity: .08; }
+      10%  { opacity: .08; }
+      90%  { opacity: .08; }
+      100% { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
     }
-    .cmd-item-desc {
-      font-size: 0.76rem;
-      color: var(--text-muted);
+
+    /* ═══════════════════════════════════════
+       HERO GRID DISTORTION SVG
+    ═══════════════════════════════════════ */
+    #heroGrid { position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: .18; }
+
+    /* ═══════════════════════════════════════
+       CARD PARTICLE (burst dots)
+    ═══════════════════════════════════════ */
+    .burst-dot {
+      position: fixed; border-radius: 50%;
+      pointer-events: none; z-index: 9995;
+      transform: translate(-50%,-50%);
+      transition: transform .55s cubic-bezier(.2,0,.2,1), opacity .55s ease;
     }
-    .cmd-item-arrow {
-      margin-left: auto;
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      opacity: 0;
-      transition: opacity 0.15s;
+
+    /* ═══════════════════════════════════════
+       GLITCH NAME ANIMATION
+    ═══════════════════════════════════════ */
+    @keyframes nameGlitch {
+      0%,100% { text-shadow: none; }
+      20% { text-shadow: 3px 0 rgba(77,171,247,.6), -3px 0 rgba(132,94,247,.6); letter-spacing: -.04em; }
+      21% { text-shadow: none; letter-spacing: -.03em; }
+      40% { text-shadow: -2px 0 rgba(77,171,247,.4), 2px 0 rgba(132,94,247,.4); }
+      41% { text-shadow: none; }
     }
-    .cmd-item:hover .cmd-item-arrow,
-    .cmd-item.active .cmd-item-arrow { opacity: 1; }
-    .cmd-footer {
-      border-top: 1px solid var(--border);
-      padding: 0.6rem 1.25rem;
-      display: flex;
-      gap: 1.25rem;
+    .name-highlight { animation: nameGlitch 6s ease infinite; }
+    [data-theme="light"] .name-highlight { animation: none; }
+
+    /* ═══════════════════════════════════════
+       HERO BLOB PULSE
+    ═══════════════════════════════════════ */
+    @keyframes blobPulse {
+      0%,100%{transform:scale(1) translate(0,0);opacity:.06}
+      33%{transform:scale(1.12) translate(20px,-15px);opacity:.1}
+      66%{transform:scale(.92) translate(-15px,20px);opacity:.07}
     }
-    .cmd-footer span {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 4px;
+    .hero-blob-1 { animation: blobPulse 9s ease-in-out infinite !important; }
+    .hero-blob-2 { animation: blobPulse 11s ease-in-out infinite 2s reverse !important; }
+
+    /* ═══════════════════════════════════════
+       SIDEBAR SOCIAL ICON RIPPLE
+    ═══════════════════════════════════════ */
+    .social-link { position: relative; overflow: hidden; }
+    .social-link::after { content:''; position:absolute; inset:0; border-radius:50%; background: radial-gradient(circle, rgba(77,171,247,.35) 0%, transparent 70%); transform: scale(0); transition: transform .4s ease; }
+    .social-link:hover::after { transform: scale(2.5); }
+
+    /* ═══════════════════════════════════════
+       SCROLL PROGRESS GLOW
+    ═══════════════════════════════════════ */
+    .scroll-progress::after { content:''; position:absolute; right:0; top:0; height:100%; width:20px; background: rgba(77,171,247,.6); filter: blur(4px); border-radius: 2px; }
+
+    /* ═══════════════════════════════════════
+       TIMELINE ANIMATED LINE
+    ═══════════════════════════════════════ */
+    .timeline::before { background: linear-gradient(180deg, var(--accent) 0%, rgba(77,171,247,.08) 100%) !important; animation: timelineGrow 2s ease forwards; }
+    @keyframes timelineGrow { from{height:0} to{height:100%} }
+
+    /* ═══════════════════════════════════════
+       AVAILABILITY BADGE GLOW
+    ═══════════════════════════════════════ */
+    .availability-badge { animation: badgePulse 3s ease infinite; }
+    @keyframes badgePulse {
+      0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,0)}
+      50%{box-shadow:0 0 0 8px rgba(0,255,136,0)}
     }
-    .cmd-footer kbd {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 3px;
-      padding: 1px 5px;
-      font-size: 0.65rem;
-      font-family: 'JetBrains Mono', monospace;
+
+    /* ═══════════════════════════════════════
+       STAT CARD HOVER GLOW
+    ═══════════════════════════════════════ */
+    .stat-item { transition: all .3s ease !important; }
+    .stat-item:hover { box-shadow: 0 0 20px rgba(77,171,247,.2) !important; }
+
+    /* ═══════════════════════════════════════
+       PROFILE FRAME GLOW PULSE
+    ═══════════════════════════════════════ */
+    .profile-image-wrapper { animation: profileGlow 4s ease-in-out infinite; }
+    @keyframes profileGlow {
+      0%,100%{box-shadow: 0 0 0 8px rgba(0,212,255,.04), 0 0 0 16px rgba(0,212,255,.02), 0 0 60px rgba(0,212,255,.12)}
+      50%{box-shadow: 0 0 0 8px rgba(0,212,255,.08), 0 0 0 16px rgba(0,212,255,.04), 0 0 80px rgba(0,212,255,.22)}
+    }
+
+    /* ═══════════════════════════════════════
+       SKILL BAR SHIMMER
+    ═══════════════════════════════════════ */
+    .line.animate::after { position: relative; overflow: hidden; }
+    .line.animate::before { content:''; position:absolute; top:0; left:-100%; width:60px; height:100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent); animation: shimmer 2s ease 1.6s 1; border-radius: 10px; }
+    @keyframes shimmer { 0%{left:-100%} 100%{left:200%} }
+
+    /* ═══════════════════════════════════════
+       HERO TYPING CURSOR BLINK
+    ═══════════════════════════════════════ */
+    .cursor-blink { animation: blink 1s steps(1) infinite !important; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+
+    /* ═══════════════════════════════════════
+       CERT / EXP CARD TOP BORDER SLIDE
+    ═══════════════════════════════════════ */
+    .certification-card,.experience-card {
+      overflow: hidden;
+    }
+    .certification-card::before,.experience-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .35s ease;
+    }
+    .certification-card:hover::before,.experience-card:hover::before { transform: scaleX(1); }
+
+    /* ═══════════════════════════════════════
+       FOOTER SOCIAL BOUNCE
+    ═══════════════════════════════════════ */
+    .footer-social a:hover { animation: socialBounce .3s ease; }
+    @keyframes socialBounce { 0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)} }
+
+    /* ═══════════════════════════════════════
+       LOADING SCREEN LOGO SPIN + PULSE
+    ═══════════════════════════════════════ */
+    .loading-logo { animation: spin-slow 2.5s linear infinite, logoFade 1.8s ease forwards !important; }
+    @keyframes logoFade { 0%{opacity:0;transform:scale(.8) rotate(0deg)} 30%{opacity:1;transform:scale(1.05)} 100%{opacity:1;transform:scale(1)} }
+
+    /* ═══════════════════════════════════════
+       MOBILE MENU
+    ═══════════════════════════════════════ */
+    @media (max-width:768px) {
+      #magneticRing { display: none; }
+      .cmd-hint { display: none; }
     }
   </style>
 </head>
 <body>
+
+  <!-- AURORA BACKGROUND -->
+  <canvas id="auroraCanvas" aria-hidden="true"></canvas>
+
+  <!-- CURSOR TRAIL -->
+  <canvas id="cursorTrailCanvas" aria-hidden="true"></canvas>
+
+  <!-- FLOATING CODE SYMBOLS -->
+  <div id="floatingSymbols" aria-hidden="true"></div>
+
+  <!-- MAGNETIC CURSOR RING -->
+  <div id="magneticRing" aria-hidden="true"></div>
 
   <!-- LOADING SCREEN -->
   <div class="loading-screen" aria-hidden="true">
@@ -519,14 +391,13 @@
     <span class="hamburger-line line-2"></span>
     <span class="hamburger-line line-3"></span>
   </button>
-
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 
   <div class="portfolio-container">
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═══════════════════════════════════════
          SIDEBAR
-    ═══════════════════════════════════════════ -->
+    ═══════════════════════════════════════ -->
     <aside class="sidebar-nav" id="sidebarNav" role="navigation" aria-label="Main navigation">
 
       <div class="brand-section">
@@ -555,66 +426,16 @@
 
       <nav class="sidebar-menu">
         <ul class="menu-list">
-          <li class="menu-item active" data-section="main">
-            <a href="#main" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-house"></i></span>
-              <span class="menu-text">Home</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="about">
-            <a href="#about" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-user"></i></span>
-              <span class="menu-text">About</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="education">
-            <a href="#education" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-graduation-cap"></i></span>
-              <span class="menu-text">Education</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="skills">
-            <a href="#skills" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-code"></i></span>
-              <span class="menu-text">Skills</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="services">
-            <a href="#services" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-briefcase"></i></span>
-              <span class="menu-text">Services</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="experience">
-            <a href="#experience" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-chart-line"></i></span>
-              <span class="menu-text">Experience</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="certifications">
-            <a href="#certifications" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-certificate"></i></span>
-              <span class="menu-text">Certifications</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="work">
-            <a href="#work" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-folder-open"></i></span>
-              <span class="menu-text">Projects</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="testimonials">
-            <a href="#testimonials" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-quote-left"></i></span>
-              <span class="menu-text">Testimonials</span>
-            </a>
-          </li>
-          <li class="menu-item" data-section="contact">
-            <a href="#contact" class="menu-link">
-              <span class="menu-icon"><i class="fas fa-envelope"></i></span>
-              <span class="menu-text">Contact</span>
-            </a>
-          </li>
+          <li class="menu-item active" data-section="main"><a href="#main" class="menu-link"><span class="menu-icon"><i class="fas fa-house"></i></span><span class="menu-text">Home</span></a></li>
+          <li class="menu-item" data-section="about"><a href="#about" class="menu-link"><span class="menu-icon"><i class="fas fa-user"></i></span><span class="menu-text">About</span></a></li>
+          <li class="menu-item" data-section="education"><a href="#education" class="menu-link"><span class="menu-icon"><i class="fas fa-graduation-cap"></i></span><span class="menu-text">Education</span></a></li>
+          <li class="menu-item" data-section="skills"><a href="#skills" class="menu-link"><span class="menu-icon"><i class="fas fa-code"></i></span><span class="menu-text">Skills</span></a></li>
+          <li class="menu-item" data-section="services"><a href="#services" class="menu-link"><span class="menu-icon"><i class="fas fa-briefcase"></i></span><span class="menu-text">Services</span></a></li>
+          <li class="menu-item" data-section="experience"><a href="#experience" class="menu-link"><span class="menu-icon"><i class="fas fa-chart-line"></i></span><span class="menu-text">Experience</span></a></li>
+          <li class="menu-item" data-section="certifications"><a href="#certifications" class="menu-link"><span class="menu-icon"><i class="fas fa-certificate"></i></span><span class="menu-text">Certifications</span></a></li>
+          <li class="menu-item" data-section="work"><a href="#work" class="menu-link"><span class="menu-icon"><i class="fas fa-folder-open"></i></span><span class="menu-text">Projects</span></a></li>
+          <li class="menu-item" data-section="testimonials"><a href="#testimonials" class="menu-link"><span class="menu-icon"><i class="fas fa-quote-left"></i></span><span class="menu-text">Testimonials</span></a></li>
+          <li class="menu-item" data-section="contact"><a href="#contact" class="menu-link"><span class="menu-icon"><i class="fas fa-envelope"></i></span><span class="menu-text">Contact</span></a></li>
         </ul>
       </nav>
 
@@ -624,27 +445,24 @@
         <a href="https://x.com/_subash13" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
         <a href="https://github.com/subashmuthub" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/subash-muthu-b-8a5587349" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://leetcode.com/u/Subash_Muthu/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" class="social-link" title="LeetCode">
-          <span class="leetcode-icon">LC</span>
-        </a>
+        <a href="https://leetcode.com/u/Subash_Muthu/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" class="social-link" title="LeetCode"><span class="leetcode-icon">LC</span></a>
         <a href="mailto:subashmuthu149@gmail.com" aria-label="Gmail" class="social-link" title="Gmail"><i class="fas fa-envelope"></i></a>
         <a href="https://wa.me/916380194475?text=Hello%20Subash!" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
 
     </aside>
 
-    <!-- ═══════════════════════════════════════════
+    <!-- ═══════════════════════════════════════
          MAIN CONTENT
-    ═══════════════════════════════════════════ -->
+    ═══════════════════════════════════════ -->
     <main class="main-content" id="mainContent">
 
-      <!-- ─────────────────────────────
-           HERO
-      ───────────────────────────── -->
+      <!-- HERO -->
       <section class="hero-landing" id="main">
         <div id="particles-js" class="particles-js" aria-hidden="true"></div>
         <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
         <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+        <!-- Interactive dot grid injected by JS -->
 
         <div class="hero-container">
           <div class="hero-content" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
@@ -664,46 +482,24 @@
               Committed to writing clean, scalable code with exceptional attention to detail.
             </p>
             <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
-              <div class="stat-item">
-                <span class="stat-number">25+</span>
-                <span class="stat-label">Projects</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Certifications</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">10+</span>
-                <span class="stat-label">Technologies</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Dedication</span>
-              </div>
+              <div class="stat-item"><span class="stat-number">25+</span><span class="stat-label">Projects</span></div>
+              <div class="stat-item"><span class="stat-number">5+</span><span class="stat-label">Certifications</span></div>
+              <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Technologies</span></div>
+              <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Dedication</span></div>
             </div>
             <div class="cta-buttons" data-aos="fade-up" data-aos-delay="500">
-              <a href="#work" class="cta-btn primary-btn">
-                <i class="fas fa-briefcase"></i> View Projects
-              </a>
-              <a href="subash resume.pdf" download="Subash_Muthu_B_Resume.pdf" class="cta-btn secondary-btn">
-                <i class="fas fa-download"></i> Download Resume
-              </a>
+              <a href="#work" class="cta-btn primary-btn"><i class="fas fa-briefcase"></i> View Projects</a>
+              <a href="subash resume.pdf" download="Subash_Muthu_B_Resume.pdf" class="cta-btn secondary-btn"><i class="fas fa-download"></i> Download Resume</a>
             </div>
           </div>
 
           <div class="hero-image" data-aos="fade-left" data-aos-duration="900" data-aos-delay="300">
             <div class="profile-frame">
-              <div class="orbit-ring orbit-1" aria-hidden="true">
-                <div class="orbit-dot"></div>
-              </div>
-              <div class="orbit-ring orbit-2" aria-hidden="true">
-                <div class="orbit-dot orbit-dot-2"></div>
-              </div>
+              <div class="orbit-ring orbit-1" aria-hidden="true"><div class="orbit-dot"></div></div>
+              <div class="orbit-ring orbit-2" aria-hidden="true"><div class="orbit-dot orbit-dot-2"></div></div>
               <div class="profile-image-wrapper">
                 <img src="001.jpg" alt="Subash Muthu B – Full Stack Developer" class="profile-image" loading="eager">
-                <div class="status-indicator" title="Available for work">
-                  <div class="status-dot"></div>
-                </div>
+                <div class="status-indicator" title="Available for work"><div class="status-dot"></div></div>
               </div>
               <div class="profile-glow" aria-hidden="true"></div>
             </div>
@@ -715,9 +511,7 @@
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           ABOUT
-      ───────────────────────────── -->
+      <!-- ABOUT -->
       <section class="about" id="about">
         <div class="title" data-aos="fade-up">
           <h2 class="section-title">About Me</h2>
@@ -731,66 +525,31 @@
             </div>
             <div class="about-floating-card" data-aos="fade-up" data-aos-delay="400">
               <i class="fas fa-code"></i>
-              <div>
-                <strong>MERN Stack</strong>
-                <span>Full Stack Developer</span>
-              </div>
+              <div><strong>MERN Stack</strong><span>Full Stack Developer</span></div>
             </div>
           </div>
           <div class="about-text-col" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
             <div class="about-skills-row">
-              <span class="skill-pill">HTML5</span>
-              <span class="skill-pill">CSS3</span>
-              <span class="skill-pill">JavaScript</span>
-              <span class="skill-pill">React</span>
-              <span class="skill-pill">Node.js</span>
-              <span class="skill-pill">MongoDB</span>
-              <span class="skill-pill">Java</span>
-              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">React</span><span class="skill-pill">Node.js</span><span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">Java</span><span class="skill-pill">SQL</span>
             </div>
             <h2 class="content-title">Hey There! I am Subash Muthu B</h2>
-            <p class="paragraph-text">
-              I'm a highly skilled and results-driven Full Stack Developer with expertise in modern web technologies.
-              My technical proficiency spans HTML5, CSS3, JavaScript ES6+, React.js, Node.js, and database management
-              with MongoDB and SQL. I excel at delivering projects on time while maintaining the highest code quality standards.
-            </p>
-            <p class="paragraph-text">
-              With a proven track record of internships and project deliveries, I bring strong problem-solving abilities,
-              excellent communication skills, and a collaborative work ethic. I'm passionate about staying current
-              with emerging technologies and implementing best practices in every project I undertake.
-            </p>
+            <p class="paragraph-text">I'm a highly skilled and results-driven Full Stack Developer with expertise in modern web technologies. My technical proficiency spans HTML5, CSS3, JavaScript ES6+, React.js, Node.js, and database management with MongoDB and SQL. I excel at delivering projects on time while maintaining the highest code quality standards.</p>
+            <p class="paragraph-text">With a proven track record of internships and project deliveries, I bring strong problem-solving abilities, excellent communication skills, and a collaborative work ethic. I'm passionate about staying current with emerging technologies and implementing best practices in every project I undertake.</p>
             <div class="about-info-grid">
-              <div class="about-info-item">
-                <span class="info-label"><i class="fas fa-map-marker-alt"></i> Location</span>
-                <span class="info-val">Kovilpatti, Tamil Nadu</span>
-              </div>
-              <div class="about-info-item">
-                <span class="info-label"><i class="fas fa-graduation-cap"></i> Degree</span>
-                <span class="info-val">B.Tech – CSE (2024–2027)</span>
-              </div>
-              <div class="about-info-item">
-                <span class="info-label"><i class="fas fa-envelope"></i> Email</span>
-                <span class="info-val">subashmuthu149@gmail.com</span>
-              </div>
-              <div class="about-info-item">
-                <span class="info-label"><i class="fas fa-phone"></i> Phone</span>
-                <span class="info-val">+91 63801 94475</span>
-              </div>
-              <div class="about-info-item">
-                <span class="info-label"><i class="fas fa-code"></i> LeetCode</span>
-                <span class="info-val">
-                  <a href="https://leetcode.com/u/Subash_Muthu/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Subash_Muthu</a>
-                </span>
-              </div>
+              <div class="about-info-item"><span class="info-label"><i class="fas fa-map-marker-alt"></i> Location</span><span class="info-val">Kovilpatti, Tamil Nadu</span></div>
+              <div class="about-info-item"><span class="info-label"><i class="fas fa-graduation-cap"></i> Degree</span><span class="info-val">B.Tech – CSE (2024–2027)</span></div>
+              <div class="about-info-item"><span class="info-label"><i class="fas fa-envelope"></i> Email</span><span class="info-val">subashmuthu149@gmail.com</span></div>
+              <div class="about-info-item"><span class="info-label"><i class="fas fa-phone"></i> Phone</span><span class="info-val">+91 63801 94475</span></div>
+              <div class="about-info-item"><span class="info-label"><i class="fas fa-code"></i> LeetCode</span><span class="info-val"><a href="https://leetcode.com/u/Subash_Muthu/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Subash_Muthu</a></span></div>
             </div>
             <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> Get In Touch</a>
           </div>
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           EDUCATION
-      ───────────────────────────── -->
+      <!-- EDUCATION -->
       <section class="education" id="education">
         <div class="container education-container">
           <div class="title" data-aos="fade-up">
@@ -833,9 +592,7 @@
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           SKILLS
-      ───────────────────────────── -->
+      <!-- SKILLS -->
       <section class="skills" id="skills">
         <div class="container skills-container">
           <div class="title" data-aos="fade-up">
@@ -845,12 +602,7 @@
           <div class="skills-layout">
             <div class="skills-text-col" data-aos="fade-right" data-aos-delay="100">
               <h2 class="content-title">Skills &amp; Expertise</h2>
-              <p class="paragraph-text">
-                I'm a dedicated developer with expertise in full-stack web development. My technical skills
-                include advanced proficiency in HTML5, CSS3, JavaScript, React.js, and Node.js with Express.
-                I excel in database design with MongoDB and SQL, RESTful API development, and modern
-                deployment workflows.
-              </p>
+              <p class="paragraph-text">I'm a dedicated developer with expertise in full-stack web development. My technical skills include advanced proficiency in HTML5, CSS3, JavaScript, React.js, and Node.js with Express. I excel in database design with MongoDB and SQL, RESTful API development, and modern deployment workflows.</p>
               <div class="tech-icon-grid">
                 <div class="tech-icon-item" title="React"><i class="fab fa-react" style="color:#61dafb"></i><span>React</span></div>
                 <div class="tech-icon-item" title="Node.js"><i class="fab fa-node-js" style="color:#68a063"></i><span>Node.js</span></div>
@@ -864,56 +616,18 @@
               <a href="#work" class="btn"><i class="fas fa-folder-open"></i> View Projects</a>
             </div>
             <div class="skills-bars-col" data-aos="fade-left" data-aos-delay="100">
-              <div class="bar">
-                <div class="info">
-                  <span><i class="fab fa-html5" style="color:#e34f26"></i> HTML</span>
-                  <span>95%</span>
-                </div>
-                <div class="line html"></div>
-              </div>
-              <div class="bar">
-                <div class="info">
-                  <span><i class="fab fa-css3-alt" style="color:#2965f1"></i> CSS</span>
-                  <span>90%</span>
-                </div>
-                <div class="line css"></div>
-              </div>
-              <div class="bar">
-                <div class="info">
-                  <span><i class="fab fa-js" style="color:#f7df1e"></i> JavaScript</span>
-                  <span>80%</span>
-                </div>
-                <div class="line javascript"></div>
-              </div>
-              <div class="bar">
-                <div class="info">
-                  <span><i class="fab fa-java" style="color:#f89820"></i> Java</span>
-                  <span>75%</span>
-                </div>
-                <div class="line java"></div>
-              </div>
-              <div class="bar">
-                <div class="info">
-                  <span><i class="fas fa-database" style="color:#4dabf7"></i> SQL / MongoDB</span>
-                  <span>80%</span>
-                </div>
-                <div class="line sql"></div>
-              </div>
-              <div class="bar">
-                <div class="info">
-                  <span><i class="fab fa-react" style="color:#61dafb"></i> React.js</span>
-                  <span>75%</span>
-                </div>
-                <div class="line react"></div>
-              </div>
+              <div class="bar"><div class="info"><span><i class="fab fa-html5" style="color:#e34f26"></i> HTML</span><span>95%</span></div><div class="line html"></div></div>
+              <div class="bar"><div class="info"><span><i class="fab fa-css3-alt" style="color:#2965f1"></i> CSS</span><span>90%</span></div><div class="line css"></div></div>
+              <div class="bar"><div class="info"><span><i class="fab fa-js" style="color:#f7df1e"></i> JavaScript</span><span>80%</span></div><div class="line javascript"></div></div>
+              <div class="bar"><div class="info"><span><i class="fab fa-java" style="color:#f89820"></i> Java</span><span>75%</span></div><div class="line java"></div></div>
+              <div class="bar"><div class="info"><span><i class="fas fa-database" style="color:#4dabf7"></i> SQL / MongoDB</span><span>80%</span></div><div class="line sql"></div></div>
+              <div class="bar"><div class="info"><span><i class="fab fa-react" style="color:#61dafb"></i> React.js</span><span>75%</span></div><div class="line react"></div></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           SERVICES
-      ───────────────────────────── -->
+      <!-- SERVICES -->
       <section class="services" id="services">
         <div class="container services-container">
           <div class="title" data-aos="fade-up">
@@ -926,35 +640,27 @@
               <div class="service-icon"><i class="fas fa-code"></i></div>
               <h3>Full Stack Development</h3>
               <p>Expert development of scalable web applications using React, Node.js, Express, and MongoDB. Specialising in performance optimisation and clean architecture.</p>
-              <div class="service-tags">
-                <span>React</span><span>Node.js</span><span>MongoDB</span>
-              </div>
+              <div class="service-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
             </div>
             <div class="service-card" data-aos="fade-up" data-aos-delay="200">
               <div class="service-number">02</div>
               <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
               <h3>UI/UX Design &amp; Dev</h3>
               <p>Crafting intuitive and visually stunning user interfaces with focus on user experience optimisation, accessibility, and responsive design principles.</p>
-              <div class="service-tags">
-                <span>HTML5</span><span>CSS3</span><span>Figma</span>
-              </div>
+              <div class="service-tags"><span>HTML5</span><span>CSS3</span><span>Figma</span></div>
             </div>
             <div class="service-card" data-aos="fade-up" data-aos-delay="300">
               <div class="service-number">03</div>
               <div class="service-icon"><i class="fas fa-server"></i></div>
               <h3>Backend &amp; API Development</h3>
               <p>Building robust RESTful APIs and backend services with Node.js, Express, and database integration. Secure, scalable, and well-documented solutions.</p>
-              <div class="service-tags">
-                <span>Express</span><span>REST API</span><span>SQL</span>
-              </div>
+              <div class="service-tags"><span>Express</span><span>REST API</span><span>SQL</span></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           EXPERIENCE
-      ───────────────────────────── -->
+      <!-- EXPERIENCE -->
       <section class="experience" id="experience">
         <div class="container experience-container">
           <div class="title" data-aos="fade-up">
@@ -962,7 +668,6 @@
             <p>My Professional Journey</p>
           </div>
           <div class="experience-grid">
-
             <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
               <div class="exp-card-top">
                 <div class="company-logo codsoft-logo">
@@ -981,17 +686,11 @@
               <div class="exp-body">
                 <p>Completed web development tasks including building responsive landing pages, calculator app, portfolio website, and tribute page using HTML, CSS, and JavaScript. Developed strong fundamentals and delivered all tasks within deadlines.</p>
                 <div class="tech-stack">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">Responsive Design</span>
+                  <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span><span class="tech-tag">Responsive Design</span>
                 </div>
               </div>
-              <div class="exp-proof">
-                <a href="Proof/Codsoft_certificate.pdf" target="_blank" class="proof-link">
-                  <i class="fas fa-certificate"></i> View Certificate
-                </a>
-              </div>
+              <div class="exp-proof"><a href="Proof/Codsoft_certificate.pdf" target="_blank" class="proof-link"><i class="fas fa-certificate"></i> View Certificate</a></div>
             </div>
 
             <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
@@ -1012,17 +711,11 @@
               <div class="exp-body">
                 <p>Worked on web development tasks covering responsive web design, interactive UI components, and JavaScript fundamentals. Built multiple projects including a Tic-Tac-Toe game, weather app UI, and a stopwatch — demonstrating strong frontend skills.</p>
                 <div class="tech-stack">
-                  <span class="tech-tag">HTML/CSS</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">DOM Manipulation</span>
-                  <span class="tech-tag">API Integration</span>
+                  <span class="tech-tag">HTML/CSS</span><span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">DOM Manipulation</span><span class="tech-tag">API Integration</span>
                 </div>
               </div>
-              <div class="exp-proof">
-                <a href="Proof/Certificate..pdf" target="_blank" class="proof-link">
-                  <i class="fas fa-certificate"></i> View Certificate
-                </a>
-              </div>
+              <div class="exp-proof"><a href="Proof/Certificate..pdf" target="_blank" class="proof-link"><i class="fas fa-certificate"></i> View Certificate</a></div>
             </div>
 
             <div class="experience-card featured-exp" data-aos="fade-up" data-aos-delay="300">
@@ -1044,27 +737,17 @@
               <div class="exp-body">
                 <p>Completed JP Morgan Chase's Software Engineering virtual experience on Forage. Worked with financial data feeds, set up a developer environment, fixed broken files in the repository, and used JPMorgan's open source library Perspective to display live graphs for trading data.</p>
                 <div class="tech-stack">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">React</span>
-                  <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">Perspective</span>
-                  <span class="tech-tag">Git</span>
+                  <span class="tech-tag">Python</span><span class="tech-tag">React</span>
+                  <span class="tech-tag">TypeScript</span><span class="tech-tag">Perspective</span><span class="tech-tag">Git</span>
                 </div>
               </div>
-              <div class="exp-proof">
-                <a href="Proof/certificate of forge.jp.pdf" target="_blank" class="proof-link">
-                  <i class="fas fa-certificate"></i> View Certificate
-                </a>
-              </div>
+              <div class="exp-proof"><a href="Proof/certificate of forge.jp.pdf" target="_blank" class="proof-link"><i class="fas fa-certificate"></i> View Certificate</a></div>
             </div>
-
           </div>
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           CERTIFICATIONS
-      ───────────────────────────── -->
+      <!-- CERTIFICATIONS -->
       <section class="certifications" id="certifications">
         <div class="container certifications-container">
           <div class="title" data-aos="fade-up">
@@ -1072,7 +755,6 @@
             <p>Professional Achievements &amp; Credentials</p>
           </div>
           <div class="certifications-grid">
-
             <div class="certification-card" data-aos="fade-up" data-aos-delay="100">
               <div class="cert-header">
                 <div class="cert-badge mongodb-badge">
@@ -1082,20 +764,13 @@
                     <circle cx="20" cy="38" r="1" fill="#00ED64"/>
                   </svg>
                 </div>
-                <div class="cert-issuer-info">
-                  <span class="cert-issuer">MongoDB University</span>
-                  <span class="cert-date">2024</span>
-                </div>
+                <div class="cert-issuer-info"><span class="cert-issuer">MongoDB University</span><span class="cert-date">2024</span></div>
               </div>
               <h3>MongoDB Developer Certificate</h3>
               <p class="cert-description">Certification covering MongoDB fundamentals, CRUD operations, aggregation framework, indexing strategies, and schema design for modern applications.</p>
               <div class="cert-footer">
-                <div class="cert-skills">
-                  <span>NoSQL</span><span>CRUD</span><span>Aggregation</span>
-                </div>
-                <a href="Proof/MangoDB.pdf" target="_blank" class="cert-verify">
-                  <i class="fas fa-external-link-alt"></i> Verify
-                </a>
+                <div class="cert-skills"><span>NoSQL</span><span>CRUD</span><span>Aggregation</span></div>
+                <a href="Proof/MangoDB.pdf" target="_blank" class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</a>
               </div>
             </div>
 
@@ -1107,20 +782,13 @@
                     <path d="M22 15 L36 20 L22 25" stroke="#845ef7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                   </svg>
                 </div>
-                <div class="cert-issuer-info">
-                  <span class="cert-issuer">CodSoft</span>
-                  <span class="cert-date">Nov 2024</span>
-                </div>
+                <div class="cert-issuer-info"><span class="cert-issuer">CodSoft</span><span class="cert-date">Nov 2024</span></div>
               </div>
               <h3>Web Development Internship Certificate</h3>
               <p class="cert-description">Completed a one-month web development internship program. Built multiple real-world projects including portfolio website, calculator, and landing pages using HTML, CSS, and JavaScript.</p>
               <div class="cert-footer">
-                <div class="cert-skills">
-                  <span>HTML</span><span>CSS</span><span>JS</span>
-                </div>
-                <a href="Proof/Codsoft_certificate.pdf" target="_blank" class="cert-verify">
-                  <i class="fas fa-external-link-alt"></i> Verify
-                </a>
+                <div class="cert-skills"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                <a href="Proof/Codsoft_certificate.pdf" target="_blank" class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</a>
               </div>
             </div>
 
@@ -1132,20 +800,13 @@
                     <path d="M13 20 L17 24 L27 14" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </div>
-                <div class="cert-issuer-info">
-                  <span class="cert-issuer">Prodigy InfoTech</span>
-                  <span class="cert-date">Dec 2024</span>
-                </div>
+                <div class="cert-issuer-info"><span class="cert-issuer">Prodigy InfoTech</span><span class="cert-date">Dec 2024</span></div>
               </div>
               <h3>Web Development Internship Certificate</h3>
               <p class="cert-description">Completed web development internship covering responsive design, JavaScript projects, and interactive UI development. Delivered 5 projects including games and utility apps.</p>
               <div class="cert-footer">
-                <div class="cert-skills">
-                  <span>HTML/CSS</span><span>JavaScript</span><span>UI/UX</span>
-                </div>
-                <a href="Proof/Certificate..pdf" target="_blank" class="cert-verify">
-                  <i class="fas fa-external-link-alt"></i> Verify
-                </a>
+                <div class="cert-skills"><span>HTML/CSS</span><span>JavaScript</span><span>UI/UX</span></div>
+                <a href="Proof/Certificate..pdf" target="_blank" class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</a>
               </div>
             </div>
 
@@ -1159,20 +820,13 @@
                     <rect x="31" y="18" width="6" height="10" rx="1" fill="#00bceb" opacity="0.6"/>
                   </svg>
                 </div>
-                <div class="cert-issuer-info">
-                  <span class="cert-issuer">Cisco Networking Academy</span>
-                  <span class="cert-date">2024</span>
-                </div>
+                <div class="cert-issuer-info"><span class="cert-issuer">Cisco Networking Academy</span><span class="cert-date">2024</span></div>
               </div>
               <h3>Cisco Networking Fundamentals</h3>
               <p class="cert-description">Completed Cisco's networking fundamentals certification covering network infrastructure, protocols, cybersecurity essentials, and IT support fundamentals through Cisco NetAcad.</p>
               <div class="cert-footer">
-                <div class="cert-skills">
-                  <span>Networking</span><span>Cybersecurity</span><span>IT</span>
-                </div>
-                <a href="Proof/Cisco certificate.pdf" target="_blank" class="cert-verify">
-                  <i class="fas fa-external-link-alt"></i> Verify
-                </a>
+                <div class="cert-skills"><span>Networking</span><span>Cybersecurity</span><span>IT</span></div>
+                <a href="Proof/Cisco certificate.pdf" target="_blank" class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</a>
               </div>
             </div>
 
@@ -1185,30 +839,20 @@
                     <text x="50%" y="57%" dominant-baseline="middle" text-anchor="middle" fill="#f0a500" font-size="11" font-weight="700" font-family="Arial,sans-serif">JP</text>
                   </svg>
                 </div>
-                <div class="cert-issuer-info">
-                  <span class="cert-issuer">JP Morgan Chase &amp; Co.</span>
-                  <span class="cert-date">2025</span>
-                </div>
+                <div class="cert-issuer-info"><span class="cert-issuer">JP Morgan Chase &amp; Co.</span><span class="cert-date">2025</span></div>
               </div>
               <h3>Software Engineering Virtual Experience</h3>
               <p class="cert-description">JP Morgan Chase's Software Engineering virtual experience program via Forage. Worked with real financial data, fixed repository code, and built live data visualisation using Perspective library.</p>
               <div class="cert-footer">
-                <div class="cert-skills">
-                  <span>Python</span><span>React</span><span>TypeScript</span>
-                </div>
-                <a href="Proof/certificate of forge.jp.pdf" target="_blank" class="cert-verify">
-                  <i class="fas fa-external-link-alt"></i> Verify
-                </a>
+                <div class="cert-skills"><span>Python</span><span>React</span><span>TypeScript</span></div>
+                <a href="Proof/certificate of forge.jp.pdf" target="_blank" class="cert-verify"><i class="fas fa-external-link-alt"></i> Verify</a>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           PROJECTS
-      ───────────────────────────── -->
+      <!-- PROJECTS -->
       <section class="work" id="work">
         <div class="container work-container">
           <div class="title" data-aos="fade-up">
@@ -1216,31 +860,18 @@
             <p>Real web applications built with modern development practices</p>
           </div>
           <div class="projects-grid">
-
-            <!-- Project 1: Laboratory Management System -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="100">
               <div class="card-img">
                 <div class="card-window-bar">
-                  <span class="dot red"></span>
-                  <span class="dot yellow"></span>
-                  <span class="dot green"></span>
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
                   <span class="card-url">mwt-project-five.vercel.app</span>
                 </div>
                 <div class="card-img-inner proj-lab">
-                  <img
-                    src="screenshot/LabMS Home Page.png"
-                    alt="Laboratory Management System Screenshot"
-                    class="proj-screenshot"
-                    onerror="this.classList.add('img-error')"
-                  >
-                  <div class="proj-icon-wrap">
-                    <i class="fas fa-flask" style="color:#4dabf7;font-size:1.8rem;"></i>
-                  </div>
+                  <img src="screenshot/LabMS Home Page.png" alt="Laboratory Management System" class="proj-screenshot" onerror="this.classList.add('img-error')">
+                  <div class="proj-icon-wrap"><i class="fas fa-flask" style="color:#4dabf7;font-size:1.8rem;"></i></div>
                   <div class="proj-glow-line"></div>
                 </div>
-                <a href="https://mwt-project-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-overlay">
-                  <i class="fas fa-external-link-alt"></i> Live Demo
-                </a>
+                <a href="https://mwt-project-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-overlay"><i class="fas fa-external-link-alt"></i> Live Demo</a>
               </div>
               <div class="project-info">
                 <div class="project-header">
@@ -1249,49 +880,29 @@
                 </div>
                 <p>A full-featured lab management web application for handling equipment booking, student records, experiment logs, and inventory tracking with role-based access control.</p>
                 <div class="project-tech">
-                  <span class="tech-badge react">React</span>
-                  <span class="tech-badge nodejs">Node.js</span>
-                  <span class="tech-badge mongodb">MongoDB</span>
-                  <span class="tech-badge">Express</span>
+                  <span class="tech-badge react">React</span><span class="tech-badge nodejs">Node.js</span>
+                  <span class="tech-badge mongodb">MongoDB</span><span class="tech-badge">Express</span>
                 </div>
                 <div class="project-buttons">
-                  <a href="https://mwt-project-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-btn primary">
-                    <i class="fas fa-eye"></i> Live Demo
-                  </a>
-                  <a href="https://github.com/subashmuthub/Labaratory-Management-System.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary">
-                    <i class="fab fa-github"></i> GitHub
-                  </a>
-                  <a href="Documentation/LabMS - REPORT.pdf" target="_blank" rel="noopener noreferrer" class="work-btn doc-btn">
-                    <i class="fas fa-file-alt"></i> Docs
-                  </a>
+                  <a href="https://mwt-project-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-btn primary"><i class="fas fa-eye"></i> Live Demo</a>
+                  <a href="https://github.com/subashmuthub/Labaratory-Management-System.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary"><i class="fab fa-github"></i> GitHub</a>
+                  <a href="Documentation/LabMS - REPORT.pdf" target="_blank" rel="noopener noreferrer" class="work-btn doc-btn"><i class="fas fa-file-alt"></i> Docs</a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 2: Student Result Management -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
               <div class="card-img">
                 <div class="card-window-bar">
-                  <span class="dot red"></span>
-                  <span class="dot yellow"></span>
-                  <span class="dot green"></span>
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
                   <span class="card-url">student-result-management.onrender.com</span>
                 </div>
                 <div class="card-img-inner proj-srm">
-                  <img
-                    src="screenshot/SRM Home Page.png"
-                    alt="Student Result Management System Screenshot"
-                    class="proj-screenshot"
-                    onerror="this.classList.add('img-error')"
-                  >
-                  <div class="proj-icon-wrap">
-                    <i class="fas fa-graduation-cap" style="color:#00d4ff;font-size:1.8rem;"></i>
-                  </div>
+                  <img src="screenshot/SRM Home Page.png" alt="Student Result Management" class="proj-screenshot" onerror="this.classList.add('img-error')">
+                  <div class="proj-icon-wrap"><i class="fas fa-graduation-cap" style="color:#00d4ff;font-size:1.8rem;"></i></div>
                   <div class="proj-glow-line"></div>
                 </div>
-                <a href="https://student-result-management-1olv.onrender.com/" target="_blank" rel="noopener noreferrer" class="card-overlay">
-                  <i class="fas fa-external-link-alt"></i> Live Demo
-                </a>
+                <a href="https://student-result-management-1olv.onrender.com/" target="_blank" rel="noopener noreferrer" class="card-overlay"><i class="fas fa-external-link-alt"></i> Live Demo</a>
               </div>
               <div class="project-info">
                 <div class="project-header">
@@ -1300,49 +911,29 @@
                 </div>
                 <p>A comprehensive student result portal for faculty to enter and publish marks while students view results, grade sheets, and performance analytics in real time.</p>
                 <div class="project-tech">
-                  <span class="tech-badge react">React</span>
-                  <span class="tech-badge nodejs">Node.js</span>
-                  <span class="tech-badge mongodb">MongoDB</span>
-                  <span class="tech-badge">REST API</span>
+                  <span class="tech-badge react">React</span><span class="tech-badge nodejs">Node.js</span>
+                  <span class="tech-badge mongodb">MongoDB</span><span class="tech-badge">REST API</span>
                 </div>
                 <div class="project-buttons">
-                  <a href="https://student-result-management-1olv.onrender.com/" target="_blank" rel="noopener noreferrer" class="work-btn primary">
-                    <i class="fas fa-eye"></i> Live Demo
-                  </a>
-                  <a href="https://github.com/subashmuthub/student-result-management.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary">
-                    <i class="fab fa-github"></i> GitHub
-                  </a>
-                  <a href="Documentation/SRM - REPORT.pdf" target="_blank" rel="noopener noreferrer" class="work-btn doc-btn">
-                    <i class="fas fa-file-alt"></i> Docs
-                  </a>
+                  <a href="https://student-result-management-1olv.onrender.com/" target="_blank" rel="noopener noreferrer" class="work-btn primary"><i class="fas fa-eye"></i> Live Demo</a>
+                  <a href="https://github.com/subashmuthub/student-result-management.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary"><i class="fab fa-github"></i> GitHub</a>
+                  <a href="Documentation/SRM - REPORT.pdf" target="_blank" rel="noopener noreferrer" class="work-btn doc-btn"><i class="fas fa-file-alt"></i> Docs</a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 3: CGPA Calculator -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="300">
               <div class="card-img">
                 <div class="card-window-bar">
-                  <span class="dot red"></span>
-                  <span class="dot yellow"></span>
-                  <span class="dot green"></span>
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
                   <span class="card-url">cgpa-calculator.onrender.com</span>
                 </div>
                 <div class="card-img-inner proj-cgpa">
-                  <img
-                    src="screenshot/CGPA Home Page.png"
-                    alt="CGPA Calculator Screenshot"
-                    class="proj-screenshot"
-                    onerror="this.classList.add('img-error')"
-                  >
-                  <div class="proj-icon-wrap">
-                    <i class="fas fa-calculator" style="color:#f0a500;font-size:1.8rem;"></i>
-                  </div>
+                  <img src="screenshot/CGPA Home Page.png" alt="CGPA Calculator" class="proj-screenshot" onerror="this.classList.add('img-error')">
+                  <div class="proj-icon-wrap"><i class="fas fa-calculator" style="color:#f0a500;font-size:1.8rem;"></i></div>
                   <div class="proj-glow-line"></div>
                 </div>
-                <a href="https://cgpa-calculator-nhsw.onrender.com/login" target="_blank" rel="noopener noreferrer" class="card-overlay">
-                  <i class="fas fa-external-link-alt"></i> Live Demo
-                </a>
+                <a href="https://cgpa-calculator-nhsw.onrender.com/login" target="_blank" rel="noopener noreferrer" class="card-overlay"><i class="fas fa-external-link-alt"></i> Live Demo</a>
               </div>
               <div class="project-info">
                 <div class="project-header">
@@ -1351,29 +942,20 @@
                 </div>
                 <p>A smart academic GPA and CGPA calculator with semester-wise grade entry, credit-weighted calculations, and visual performance tracking for students.</p>
                 <div class="project-tech">
-                  <span class="tech-badge nodejs">Node.js</span>
-                  <span class="tech-badge mongodb">MongoDB</span>
-                  <span class="tech-badge">Express</span>
-                  <span class="tech-badge">EJS</span>
+                  <span class="tech-badge nodejs">Node.js</span><span class="tech-badge mongodb">MongoDB</span>
+                  <span class="tech-badge">Express</span><span class="tech-badge">EJS</span>
                 </div>
                 <div class="project-buttons">
-                  <a href="https://cgpa-calculator-nhsw.onrender.com/login" target="_blank" rel="noopener noreferrer" class="work-btn primary">
-                    <i class="fas fa-eye"></i> Live Demo
-                  </a>
-                  <a href="https://github.com/subashmuthub/CGPA-Calculator.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary">
-                    <i class="fab fa-github"></i> GitHub
-                  </a>
+                  <a href="https://cgpa-calculator-nhsw.onrender.com/login" target="_blank" rel="noopener noreferrer" class="work-btn primary"><i class="fas fa-eye"></i> Live Demo</a>
+                  <a href="https://github.com/subashmuthub/CGPA-Calculator.git" target="_blank" rel="noopener noreferrer" class="work-btn secondary"><i class="fab fa-github"></i> GitHub</a>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           TESTIMONIALS
-      ───────────────────────────── -->
+      <!-- TESTIMONIALS -->
       <section class="testimonials" id="testimonials">
         <div class="container testimonials-container">
           <div class="title" data-aos="fade-up">
@@ -1387,10 +969,7 @@
               <p class="quote">Subash delivered high-quality work consistently during his internship. His attention to detail and ability to pick up new technologies quickly is impressive. A reliable and hardworking developer.</p>
               <div class="testimonial-author">
                 <div class="author-avatar"><i class="fas fa-user-tie"></i></div>
-                <div>
-                  <strong class="author-name">Internship Mentor</strong>
-                  <span class="author-role">CodSoft</span>
-                </div>
+                <div><strong class="author-name">Internship Mentor</strong><span class="author-role">CodSoft</span></div>
               </div>
             </div>
             <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
@@ -1399,78 +978,46 @@
               <p class="quote">Technically strong, very detail-oriented and always delivers on time. Subash's code is clean, well-structured and he communicates clearly throughout the project. Highly recommended!</p>
               <div class="testimonial-author">
                 <div class="author-avatar"><i class="fas fa-user-tie"></i></div>
-                <div>
-                  <strong class="author-name">Project Supervisor</strong>
-                  <span class="author-role">Prodigy InfoTech</span>
-                </div>
+                <div><strong class="author-name">Project Supervisor</strong><span class="author-role">Prodigy InfoTech</span></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           CONTACT  ← EMAILJS POWERED
-      ───────────────────────────── -->
+      <!-- CONTACT -->
       <section class="contact" id="contact">
         <div class="container contact-container">
           <div class="title" data-aos="fade-up">
             <h2 class="section-title">Let's Build Something Amazing</h2>
             <p>Ready to discuss your next project? Let's connect and turn your vision into reality.</p>
           </div>
-
           <div class="contact-info-row" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-info-card">
               <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div>
-                <h3>Location</h3>
-                <span>Kovilpatti, Tamil Nadu, India</span>
-                <small>Available for remote collaboration worldwide</small>
-              </div>
+              <div><h3>Location</h3><span>Kovilpatti, Tamil Nadu, India</span><small>Available for remote collaboration worldwide</small></div>
             </div>
             <div class="contact-info-card">
               <div class="contact-icon"><i class="fas fa-phone"></i></div>
-              <div>
-                <h3>Phone</h3>
-                <span>+91 63801 94475</span>
-                <small>Available Mon–Fri, 9 AM – 6 PM IST</small>
-              </div>
+              <div><h3>Phone</h3><span>+91 63801 94475</span><small>Available Mon–Fri, 9 AM – 6 PM IST</small></div>
             </div>
             <div class="contact-info-card">
               <div class="contact-icon"><i class="fab fa-google" style="color:#ea4335"></i></div>
-              <div>
-                <h3>Gmail</h3>
-                <a href="mailto:subashmuthu149@gmail.com" class="gmail-link">
-                  <span>subashmuthu149@gmail.com</span>
-                </a>
-                <small>Response within 24 hours guaranteed</small>
-              </div>
+              <div><h3>Gmail</h3><a href="mailto:subashmuthu149@gmail.com" class="gmail-link"><span>subashmuthu149@gmail.com</span></a><small>Response within 24 hours guaranteed</small></div>
             </div>
           </div>
-
           <div class="contact-form-wrap" data-aos="fade-up" data-aos-delay="200">
             <div class="form-header">
               <h3>Start Your Project Today</h3>
               <p>Fill out the form below and I'll get back to you within 24 hours.</p>
             </div>
-
-            <!-- EmailJS powered form — NO action attribute needed -->
-            <form id="contactForm" class="contact-form" novalidate>
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/xlgkwlgr" method="POST" novalidate>
               <div class="form-row">
-                <div class="input-box">
-                  <i class="fas fa-user input-ico"></i>
-                  <input type="text" name="from_name" id="from_name" placeholder="Full Name" required autocomplete="name">
-                </div>
-                <div class="input-box">
-                  <i class="fas fa-envelope input-ico"></i>
-                  <input type="email" name="reply_to" id="reply_to" placeholder="Email Address" required autocomplete="email">
-                </div>
+                <div class="input-box"><i class="fas fa-user input-ico"></i><input type="text" name="from_name" id="from_name" placeholder="Full Name" required autocomplete="name"></div>
+                <div class="input-box"><i class="fas fa-envelope input-ico"></i><input type="email" name="reply_to" id="reply_to" placeholder="Email Address" required autocomplete="email"></div>
               </div>
               <div class="form-row">
-                <div class="input-box">
-                  <i class="fas fa-phone input-ico"></i>
-                  <input type="tel" name="phone" id="phone" placeholder="Phone Number (Optional)" autocomplete="tel">
-                </div>
+                <div class="input-box"><i class="fas fa-phone input-ico"></i><input type="tel" name="phone" id="phone" placeholder="Phone Number (Optional)" autocomplete="tel"></div>
                 <div class="input-box select-box">
                   <i class="fas fa-folder input-ico"></i>
                   <select name="project_type" id="project_type" required>
@@ -1483,26 +1030,16 @@
                   </select>
                 </div>
               </div>
-              <div class="input-box full">
-                <i class="fas fa-comment input-ico textarea-ico"></i>
-                <textarea name="message" id="message" placeholder="Tell me about your project requirements..." required></textarea>
-              </div>
-
+              <div class="input-box full"><i class="fas fa-comment input-ico textarea-ico"></i><textarea name="message" id="message" placeholder="Tell me about your project requirements..." required></textarea></div>
               <div class="form-status" id="formStatus"></div>
-
-              <button type="submit" class="send-btn" id="sendBtn">
-                <i class="fas fa-paper-plane"></i> Send Project Inquiry
-              </button>
+              <button type="submit" class="send-btn" id="sendBtn"><i class="fas fa-paper-plane"></i> Send Project Inquiry</button>
               <p class="form-note"><i class="fas fa-lock"></i> Your information is secure and will never be shared with third parties.</p>
             </form>
           </div>
-
         </div>
       </section>
 
-      <!-- ─────────────────────────────
-           FOOTER
-      ───────────────────────────── -->
+      <!-- FOOTER -->
       <footer class="footer">
         <div class="container footer-container">
           <div class="footer-content">
@@ -1521,7 +1058,7 @@
                 <a href="https://www.linkedin.com/in/subash-muthu-b-8a5587349" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://x.com/_subash13" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.instagram.com/_subash13._" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://leetcode.com/u/Subash_Muthu/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" title="LeetCode" style="font-size:0.65rem;font-weight:800;font-family:'JetBrains Mono',monospace;">LC</a>
+                <a href="https://leetcode.com/u/Subash_Muthu/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode" title="LeetCode" style="font-size:.65rem;font-weight:800;font-family:'JetBrains Mono',monospace;">LC</a>
                 <a href="mailto:subashmuthu149@gmail.com" aria-label="Gmail" title="Gmail"><i class="fas fa-envelope"></i></a>
               </div>
             </div>
@@ -1550,19 +1087,13 @@
                 <p><i class="fas fa-envelope"></i> subashmuthu149@gmail.com</p>
                 <p><i class="fas fa-phone"></i> +91 63801 94475</p>
                 <p><i class="fas fa-map-marker-alt"></i> Kovilpatti, Tamil Nadu, India</p>
-                <p>
-                  <i class="fas fa-code"></i>
-                  <a href="https://leetcode.com/u/Subash_Muthu/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">LeetCode: Subash_Muthu</a>
-                </p>
+                <p><i class="fas fa-code"></i><a href="https://leetcode.com/u/Subash_Muthu/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)"> LeetCode: Subash_Muthu</a></p>
               </div>
             </div>
           </div>
           <div class="footer-bottom">
             <p>&copy; 2026 Subash Muthu B. All rights reserved. Built with <span style="color:#e25555">♥</span> by Subash Muthu B.</p>
-            <div class="footer-bottom-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-            </div>
+            <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
           </div>
         </div>
       </footer>
@@ -1574,244 +1105,351 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="js/all-scripts.js"></script>
 
-  <!-- ══════════════════════════════════════
-       EMAILJS INIT + FORM HANDLER
-  ══════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════
+       ALL ANIMATION SYSTEMS
+  ═══════════════════════════════════════ -->
   <script>
-    // ── EmailJS Setup ──────────────────────────────
-    // STEP 1: Go to https://www.emailjs.com/ → sign up free
-    // STEP 2: Add Email Service (Gmail) → copy your SERVICE_ID
-    // STEP 3: Create Email Template → copy your TEMPLATE_ID
-    //         Template variables used: {{from_name}}, {{reply_to}}, {{phone}}, {{project_type}}, {{message}}
-    // STEP 4: Go to Account → copy your PUBLIC_KEY
-    // STEP 5: Replace the 3 values below with your actual IDs
+  /* ─────────────────────────────────────
+     1. AURORA BACKGROUND
+  ───────────────────────────────────── */
+  (function() {
+    const canvas = document.getElementById('auroraCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, orbs;
+    const isLight = () => document.documentElement.getAttribute('data-theme') === 'light';
 
-    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz456'
-    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'user_AbCdEfGh'
-
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const btn    = document.getElementById('sendBtn');
-      const status = document.getElementById('formStatus');
-
-      // Basic validation
-      const name    = document.getElementById('from_name').value.trim();
-      const email   = document.getElementById('reply_to').value.trim();
-      const ptype   = document.getElementById('project_type').value;
-      const message = document.getElementById('message').value.trim();
-
-      if (!name || !email || !ptype || !message) {
-        status.className = 'form-status error';
-        status.textContent = '✗ Please fill in all required fields.';
-        return;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        status.className = 'form-status error';
-        status.textContent = '✗ Please enter a valid email address.';
-        return;
-      }
-
-      // Sending state
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      btn.disabled  = true;
-      status.className = 'form-status';
-
-      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
-        .then(() => {
-          status.className = 'form-status success';
-          status.textContent = '✓ Message sent successfully! I will reply within 24 hours.';
-          btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-          this.reset();
-          setTimeout(() => {
-            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Project Inquiry';
-            btn.disabled  = false;
-            status.className = 'form-status';
-          }, 4000);
-        })
-        .catch((err) => {
-          console.error('EmailJS error:', err);
-          status.className = 'form-status error';
-          status.textContent = '✗ Something went wrong. Please try emailing subashmuthu149@gmail.com directly.';
-          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Project Inquiry';
-          btn.disabled  = false;
-        });
-    });
-  </script>
-
-  <!-- ══════════════════════════════════════
-       DARK / LIGHT THEME TOGGLE
-  ══════════════════════════════════════ -->
-  <script>
-    (function() {
-      const html      = document.documentElement;
-      const toggleBtn = document.getElementById('themeToggle');
-      const iconEl    = document.getElementById('themeIcon');
-
-      // Persist preference
-      const saved = localStorage.getItem('portfolio-theme') || 'dark';
-      html.setAttribute('data-theme', saved);
-      iconEl.className = saved === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-
-      toggleBtn.addEventListener('click', () => {
-        const current = html.getAttribute('data-theme');
-        const next    = current === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        iconEl.className = next === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-        localStorage.setItem('portfolio-theme', next);
-
-        // Micro-interaction
-        toggleBtn.style.transform = 'rotate(360deg) scale(1.1)';
-        setTimeout(() => { toggleBtn.style.transform = ''; }, 400);
-      });
-    })();
-  </script>
-
-  <!-- ══════════════════════════════════════
-       COMMAND PALETTE  (Ctrl+K / Cmd+K)
-  ══════════════════════════════════════ -->
-  <script>
-    (function() {
-      const overlay   = document.getElementById('cmdOverlay');
-      const input     = document.getElementById('cmdInput');
-      const results   = document.getElementById('cmdResults');
-
-      const COMMANDS = [
-        { group: 'Navigate',  icon: 'fas fa-house',        label: 'Home',          desc: 'Go to hero section',          action: () => scrollToSection('main') },
-        { group: 'Navigate',  icon: 'fas fa-user',         label: 'About',         desc: 'Learn about Subash',          action: () => scrollToSection('about') },
-        { group: 'Navigate',  icon: 'fas fa-graduation-cap', label: 'Education',   desc: 'Academic background',         action: () => scrollToSection('education') },
-        { group: 'Navigate',  icon: 'fas fa-code',         label: 'Skills',        desc: 'Technologies & expertise',    action: () => scrollToSection('skills') },
-        { group: 'Navigate',  icon: 'fas fa-briefcase',    label: 'Services',      desc: 'What I offer',                action: () => scrollToSection('services') },
-        { group: 'Navigate',  icon: 'fas fa-chart-line',   label: 'Experience',    desc: 'Work history',                action: () => scrollToSection('experience') },
-        { group: 'Navigate',  icon: 'fas fa-certificate',  label: 'Certifications',desc: 'Professional credentials',    action: () => scrollToSection('certifications') },
-        { group: 'Navigate',  icon: 'fas fa-folder-open',  label: 'Projects',      desc: 'Featured work',               action: () => scrollToSection('work') },
-        { group: 'Navigate',  icon: 'fas fa-envelope',     label: 'Contact',       desc: 'Get in touch',                action: () => scrollToSection('contact') },
-        { group: 'Links',     icon: 'fab fa-github',       label: 'GitHub',        desc: 'github.com/subashmuthub',     action: () => window.open('https://github.com/subashmuthub','_blank') },
-        { group: 'Links',     icon: 'fab fa-linkedin-in',  label: 'LinkedIn',      desc: 'View LinkedIn profile',       action: () => window.open('https://www.linkedin.com/in/subash-muthu-b-8a5587349','_blank') },
-        { group: 'Links',     icon: 'fas fa-code',         label: 'LeetCode',      desc: 'Subash_Muthu on LeetCode',    action: () => window.open('https://leetcode.com/u/Subash_Muthu/','_blank') },
-        { group: 'Links',     icon: 'fas fa-envelope',     label: 'Gmail',         desc: 'subashmuthu149@gmail.com',    action: () => window.location.href='mailto:subashmuthu149@gmail.com' },
-        { group: 'Actions',   icon: 'fas fa-download',     label: 'Download Resume',desc: 'Get PDF resume',             action: () => { const a=document.createElement('a'); a.href='subash resume.pdf'; a.download='Subash_Muthu_B_Resume.pdf'; a.click(); } },
-        { group: 'Actions',   icon: 'fas fa-sun',          label: 'Toggle Theme',   desc: 'Switch dark / light',        action: () => document.getElementById('themeToggle').click() },
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    function createOrbs() {
+      orbs = [
+        { x: W*.15, y: H*.2,  vx:.18, vy:.12, r:380, hue:210 },
+        { x: W*.75, y: H*.15, vx:-.14, vy:.16, r:320, hue:265 },
+        { x: W*.55, y: H*.72, vx:.12, vy:-.18, r:350, hue:185 },
+        { x: W*.25, y: H*.80, vx:-.16, vy:-.10, r:280, hue:230 },
+        { x: W*.85, y: H*.60, vx:.10, vy:.14,  r:300, hue:190 },
       ];
+    }
+    function drawOrb(o) {
+      const light = isLight(), alpha = light ? .09 : .13;
+      const g = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r);
+      g.addColorStop(0, `hsla(${o.hue},80%,${light?55:65}%,${alpha})`);
+      g.addColorStop(.5, `hsla(${o.hue+20},70%,${light?50:60}%,${alpha*.5})`);
+      g.addColorStop(1, `hsla(${o.hue},60%,50%,0)`);
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(o.x, o.y, o.r, 0, Math.PI*2); ctx.fill();
+    }
+    function tick() {
+      ctx.clearRect(0, 0, W, H);
+      orbs.forEach(o => {
+        o.x += o.vx; o.y += o.vy;
+        if (o.x < -o.r || o.x > W+o.r) o.vx *= -1;
+        if (o.y < -o.r || o.y > H+o.r) o.vy *= -1;
+        o.hue += .08; drawOrb(o);
+      });
+      requestAnimationFrame(tick);
+    }
+    resize(); createOrbs(); tick();
+    window.addEventListener('resize', () => { resize(); createOrbs(); });
+    new MutationObserver(() => createOrbs()).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  })();
 
-      let activeIdx = 0;
-      let filtered  = [...COMMANDS];
+  /* ─────────────────────────────────────
+     2. CURSOR TRAIL — comet sparks
+  ───────────────────────────────────── */
+  (function() {
+    const canvas = document.getElementById('cursorTrailCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    const particles = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize(); window.addEventListener('resize', resize);
 
-      function open() {
-        overlay.classList.add('open');
-        input.value = '';
-        render('');
-        setTimeout(() => input.focus(), 50);
-      }
-
-      function close() {
-        overlay.classList.remove('open');
-        activeIdx = 0;
-      }
-
-      function render(query) {
-        filtered = COMMANDS.filter(c =>
-          c.label.toLowerCase().includes(query.toLowerCase()) ||
-          c.desc.toLowerCase().includes(query.toLowerCase())
-        );
-        if (activeIdx >= filtered.length) activeIdx = 0;
-
-        const groups = [...new Set(filtered.map(c => c.group))];
-        results.innerHTML = groups.map(g => {
-          const items = filtered.filter(c => c.group === g);
-          return `
-            <div class="cmd-group-label">${g}</div>
-            ${items.map((c, i) => {
-              const globalIdx = filtered.indexOf(c);
-              return `
-                <div class="cmd-item ${globalIdx === activeIdx ? 'active' : ''}" data-idx="${globalIdx}">
-                  <div class="cmd-item-icon"><i class="${c.icon}"></i></div>
-                  <div>
-                    <div class="cmd-item-label">${c.label}</div>
-                    <div class="cmd-item-desc">${c.desc}</div>
-                  </div>
-                  <i class="fas fa-arrow-right cmd-item-arrow"></i>
-                </div>`;
-            }).join('')}
-          `;
-        }).join('');
-
-        // Click handlers
-        results.querySelectorAll('.cmd-item').forEach(el => {
-          el.addEventListener('click', () => {
-            const idx = parseInt(el.dataset.idx);
-            filtered[idx].action();
-            close();
-          });
-          el.addEventListener('mouseenter', () => {
-            activeIdx = parseInt(el.dataset.idx);
-            results.querySelectorAll('.cmd-item').forEach(e => e.classList.remove('active'));
-            el.classList.add('active');
-          });
+    window.addEventListener('mousemove', e => {
+      const count = 3;
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2, speed = Math.random() * 1.8 + .4;
+        const hue = isLight ? (200 + Math.random() * 60) : (180 + Math.random() * 80);
+        particles.push({
+          x: e.clientX, y: e.clientY,
+          vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed - 1.2,
+          life: 1, decay: .032 + Math.random() * .025,
+          size: Math.random() * 3 + 1,
+          hue, sat: isLight ? 70 : 90, lit: isLight ? 45 : 65,
         });
       }
+    });
 
-      // Keyboard navigation
-      document.addEventListener('keydown', e => {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-          e.preventDefault();
-          overlay.classList.contains('open') ? close() : open();
-          return;
-        }
-        if (!overlay.classList.contains('open')) return;
-        if (e.key === 'Escape') { close(); return; }
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          activeIdx = (activeIdx + 1) % filtered.length;
-          render(input.value);
-          return;
-        }
-        if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          activeIdx = (activeIdx - 1 + filtered.length) % filtered.length;
-          render(input.value);
-          return;
-        }
-        if (e.key === 'Enter' && filtered[activeIdx]) {
-          filtered[activeIdx].action();
-          close();
+    function loop() {
+      ctx.clearRect(0, 0, W, H);
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx; p.y += p.vy; p.vy += .04; p.life -= p.decay;
+        if (p.life <= 0) { particles.splice(i, 1); continue; }
+        ctx.globalAlpha = p.life * .8;
+        ctx.fillStyle = `hsl(${p.hue},${p.sat}%,${p.lit}%)`;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI*2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+
+  /* ─────────────────────────────────────
+     3. MAGNETIC CURSOR RING
+  ───────────────────────────────────── */
+  (function() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    const ring = document.getElementById('magneticRing');
+    if (!ring) return;
+    let rx = 0, ry = 0, tx = 0, ty = 0;
+    document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
+    function animate() {
+      rx += (tx - rx) * .10; ry += (ty - ry) * .10;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(animate);
+    }
+    animate();
+    const targets = 'a,button,.cta-btn,.service-card,.project-card,.certification-card,.menu-link,.social-link,.work-btn,.tech-icon-item';
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest(targets)) {
+        ring.style.width = ring.style.height = '60px';
+        ring.style.borderColor = 'rgba(77,171,247,.9)';
+        ring.style.background = 'rgba(77,171,247,.06)';
+      }
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest(targets)) {
+        ring.style.width = ring.style.height = '40px';
+        ring.style.borderColor = 'rgba(77,171,247,.6)';
+        ring.style.background = 'transparent';
+      }
+    });
+  })();
+
+  /* ─────────────────────────────────────
+     4. FLOATING CODE SYMBOLS
+  ───────────────────────────────────── */
+  (function() {
+    const container = document.getElementById('floatingSymbols');
+    if (!container) return;
+    const symbols = ['</','/>', '{','}','=>','()','[]','&&','||','++','**','!=','===','::','#','@'];
+
+    function spawn() {
+      const el = document.createElement('span');
+      const sym = symbols[Math.floor(Math.random() * symbols.length)];
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      const startX = Math.random() * window.innerWidth;
+      const dur = 14 + Math.random() * 18;
+      const size = 10 + Math.random() * 8;
+      const opacity = isLight ? (.05 + Math.random() * .07) : (.06 + Math.random() * .1);
+      const hue = 190 + Math.random() * 80;
+      el.textContent = sym;
+      el.style.cssText = `position:absolute;left:${startX}px;bottom:-40px;font-family:'JetBrains Mono',monospace;font-size:${size}px;color:hsl(${hue},80%,${isLight?40:70}%);opacity:${opacity};user-select:none;animation:floatUp ${dur}s linear forwards;transform:rotate(${-20+Math.random()*40}deg);`;
+      container.appendChild(el);
+      setTimeout(() => el.remove(), dur * 1000);
+    }
+    setInterval(spawn, 1200);
+    for (let i = 0; i < 8; i++) setTimeout(spawn, i * 300);
+  })();
+
+  /* ─────────────────────────────────────
+     5. INK-WASH SECTION TITLE REVEAL
+  ───────────────────────────────────── */
+  (function() {
+    document.querySelectorAll('.section-title').forEach(el => el.classList.add('ink-hidden'));
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('ink-visible'); io.unobserve(e.target); } });
+    }, { threshold: .3 });
+    document.querySelectorAll('.ink-hidden').forEach(el => io.observe(el));
+  })();
+
+  /* ─────────────────────────────────────
+     6. HERO DOT GRID DISTORTION
+  ───────────────────────────────────── */
+  (function() {
+    const hero = document.getElementById('main');
+    if (!hero) return;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.id = 'heroGrid';
+    svg.setAttribute('width','100%'); svg.setAttribute('height','100%');
+    const cols = 18, rows = 12, dots = [];
+    const isLight = () => document.documentElement.getAttribute('data-theme') === 'light';
+
+    for (let r = 0; r <= rows; r++) {
+      for (let c = 0; c <= cols; c++) {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        const bx = (c/cols)*100, by = (r/rows)*100;
+        circle.setAttribute('cx', bx+'%'); circle.setAttribute('cy', by+'%');
+        circle.setAttribute('r','1.2');
+        circle.setAttribute('fill', isLight() ? '#1971c2' : '#4dabf7');
+        svg.appendChild(circle); dots.push({ el: circle, bx, by });
+      }
+    }
+    hero.style.position = 'relative';
+    hero.insertBefore(svg, hero.firstChild);
+
+    let mx = -999, my = -999;
+    hero.addEventListener('mousemove', e => {
+      const rect = hero.getBoundingClientRect();
+      mx = ((e.clientX-rect.left)/rect.width)*100;
+      my = ((e.clientY-rect.top)/rect.height)*100;
+    });
+    hero.addEventListener('mouseleave', () => { mx = my = -999; });
+
+    new MutationObserver(() => {
+      dots.forEach(d => d.el.setAttribute('fill', isLight() ? '#1971c2' : '#4dabf7'));
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    function updateGrid() {
+      dots.forEach(d => {
+        const dx = d.bx-mx, dy = d.by-my, dist = Math.sqrt(dx*dx+dy*dy);
+        const radius = 18, strength = 2.8;
+        if (dist < radius) {
+          const force = (1-dist/radius)*strength;
+          d.el.setAttribute('cx', (d.bx+(dx/dist)*force)+'%');
+          d.el.setAttribute('cy', (d.by+(dy/dist)*force)+'%');
+          d.el.setAttribute('r', (1.2+force*.5).toFixed(2));
+          d.el.setAttribute('opacity', (.5+force*.2).toFixed(2));
+        } else {
+          d.el.setAttribute('cx',d.bx+'%'); d.el.setAttribute('cy',d.by+'%');
+          d.el.setAttribute('r','1.2'); d.el.setAttribute('opacity','1');
         }
       });
+      requestAnimationFrame(updateGrid);
+    }
+    updateGrid();
+  })();
 
-      input.addEventListener('input', () => {
-        activeIdx = 0;
-        render(input.value);
+  /* ─────────────────────────────────────
+     7. CARD PARTICLE BURST on hover
+  ───────────────────────────────────── */
+  (function() {
+    document.querySelectorAll('.project-card,.service-card,.certification-card').forEach(card => {
+      card.addEventListener('mouseenter', e => {
+        const rect = card.getBoundingClientRect();
+        const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        for (let i = 0; i < 10; i++) {
+          const dot = document.createElement('div');
+          dot.className = 'burst-dot';
+          const angle = (i/10)*Math.PI*2, dist = 40+Math.random()*30;
+          const tx = Math.cos(angle)*dist, ty = Math.sin(angle)*dist;
+          const hue = 190 + Math.random()*70, size = 3+Math.random()*3;
+          dot.style.cssText = `left:${cx}px;top:${cy}px;width:${size}px;height:${size}px;background:hsl(${hue},85%,${isLight?45:65}%);opacity:.9;`;
+          document.body.appendChild(dot);
+          requestAnimationFrame(() => { dot.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px))`; dot.style.opacity = '0'; });
+          setTimeout(() => dot.remove(), 600);
+        }
       });
+    });
+  })();
 
-      overlay.addEventListener('click', e => {
-        if (e.target === overlay) close();
+  /* ─────────────────────────────────────
+     8. COMMAND PALETTE  (Ctrl+K)
+  ───────────────────────────────────── */
+  (function() {
+    const overlay = document.getElementById('cmdOverlay');
+    const input   = document.getElementById('cmdInput');
+    const results = document.getElementById('cmdResults');
+    if (!overlay) return;
+
+    const COMMANDS = [
+      { group:'Navigate', icon:'fas fa-house',        label:'Home',          desc:'Go to hero section',       action:()=>scrollToSection('main') },
+      { group:'Navigate', icon:'fas fa-user',         label:'About',         desc:'Learn about Subash',       action:()=>scrollToSection('about') },
+      { group:'Navigate', icon:'fas fa-graduation-cap',label:'Education',    desc:'Academic background',      action:()=>scrollToSection('education') },
+      { group:'Navigate', icon:'fas fa-code',         label:'Skills',        desc:'Technologies & expertise', action:()=>scrollToSection('skills') },
+      { group:'Navigate', icon:'fas fa-briefcase',    label:'Services',      desc:'What I offer',             action:()=>scrollToSection('services') },
+      { group:'Navigate', icon:'fas fa-chart-line',   label:'Experience',    desc:'Work history',             action:()=>scrollToSection('experience') },
+      { group:'Navigate', icon:'fas fa-certificate',  label:'Certifications',desc:'Professional credentials', action:()=>scrollToSection('certifications') },
+      { group:'Navigate', icon:'fas fa-folder-open',  label:'Projects',      desc:'Featured work',            action:()=>scrollToSection('work') },
+      { group:'Navigate', icon:'fas fa-envelope',     label:'Contact',       desc:'Get in touch',             action:()=>scrollToSection('contact') },
+      { group:'Links',    icon:'fab fa-github',        label:'GitHub',        desc:'github.com/subashmuthub', action:()=>window.open('https://github.com/subashmuthub','_blank') },
+      { group:'Links',    icon:'fab fa-linkedin-in',   label:'LinkedIn',      desc:'View LinkedIn profile',   action:()=>window.open('https://www.linkedin.com/in/subash-muthu-b-8a5587349','_blank') },
+      { group:'Links',    icon:'fas fa-code',          label:'LeetCode',      desc:'Subash_Muthu on LeetCode',action:()=>window.open('https://leetcode.com/u/Subash_Muthu/','_blank') },
+      { group:'Links',    icon:'fas fa-envelope',      label:'Gmail',         desc:'subashmuthu149@gmail.com',action:()=>window.location.href='mailto:subashmuthu149@gmail.com' },
+      { group:'Actions',  icon:'fas fa-download',      label:'Download Resume',desc:'Get PDF resume',         action:()=>{ const a=document.createElement('a'); a.href='subash resume.pdf'; a.download='Subash_Muthu_B_Resume.pdf'; a.click(); } },
+      { group:'Actions',  icon:'fas fa-sun',           label:'Toggle Theme',  desc:'Switch dark / light',     action:()=>document.getElementById('themeToggle').click() },
+    ];
+
+    let activeIdx = 0, filtered = [...COMMANDS];
+
+    function open() { overlay.classList.add('open'); input.value=''; render(''); setTimeout(()=>input.focus(),50); }
+    function close() { overlay.classList.remove('open'); activeIdx = 0; }
+
+    function render(query) {
+      filtered = COMMANDS.filter(c => c.label.toLowerCase().includes(query.toLowerCase()) || c.desc.toLowerCase().includes(query.toLowerCase()));
+      if (activeIdx >= filtered.length) activeIdx = 0;
+      const groups = [...new Set(filtered.map(c=>c.group))];
+      results.innerHTML = groups.map(g => {
+        const items = filtered.filter(c=>c.group===g);
+        return `<div class="cmd-group-label">${g}</div>${items.map(c=>{
+          const idx = filtered.indexOf(c);
+          return `<div class="cmd-item${idx===activeIdx?' active':''}" data-idx="${idx}"><div class="cmd-item-icon"><i class="${c.icon}"></i></div><div><div class="cmd-item-label">${c.label}</div><div class="cmd-item-desc">${c.desc}</div></div><i class="fas fa-arrow-right cmd-item-arrow"></i></div>`;
+        }).join('')}`;
+      }).join('');
+      results.querySelectorAll('.cmd-item').forEach(el => {
+        el.addEventListener('click',()=>{ filtered[parseInt(el.dataset.idx)].action(); close(); });
+        el.addEventListener('mouseenter',()=>{ activeIdx=parseInt(el.dataset.idx); render(input.value); });
       });
-    })();
+    }
+
+    document.addEventListener('keydown', e => {
+      if ((e.ctrlKey||e.metaKey) && e.key==='k') { e.preventDefault(); overlay.classList.contains('open')?close():open(); return; }
+      if (!overlay.classList.contains('open')) return;
+      if (e.key==='Escape') { close(); return; }
+      if (e.key==='ArrowDown') { e.preventDefault(); activeIdx=(activeIdx+1)%filtered.length; render(input.value); }
+      if (e.key==='ArrowUp')   { e.preventDefault(); activeIdx=(activeIdx-1+filtered.length)%filtered.length; render(input.value); }
+      if (e.key==='Enter' && filtered[activeIdx]) { filtered[activeIdx].action(); close(); }
+    });
+    input.addEventListener('input', ()=>{ activeIdx=0; render(input.value); });
+    overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
+  })();
+
+  /* ─────────────────────────────────────
+     9. DARK / LIGHT THEME TOGGLE
+  ───────────────────────────────────── */
+  (function() {
+    const html = document.documentElement;
+    const btn  = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    if (!btn) return;
+    const saved = localStorage.getItem('portfolio-theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    icon.className = saved==='dark' ? 'fas fa-moon' : 'fas fa-sun';
+
+    btn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      icon.className = next==='dark' ? 'fas fa-moon' : 'fas fa-sun';
+      localStorage.setItem('portfolio-theme', next);
+      btn.style.transform = 'rotate(360deg) scale(1.1)';
+      setTimeout(()=>{ btn.style.transform=''; }, 400);
+    });
+  })();
+
+  /* ─────────────────────────────────────
+     10. CMD HINT FADE OUT
+  ───────────────────────────────────── */
+  (function() {
+    const hint = document.getElementById('cmdHint');
+    if (!hint) return;
+    if (!window.matchMedia('(hover: none)').matches) {
+      setTimeout(()=>{ hint.style.transition='opacity 1s ease'; hint.style.opacity='0'; setTimeout(()=>hint.style.display='none',1000); }, 6000);
+    } else { hint.style.display='none'; }
+  })();
   </script>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Subash Muthu B",
-    "jobTitle": "Full Stack Developer",
-    "url": "https://subashmuthub.dev",
-    "email": "subashmuthu149@gmail.com",
-    "telephone": "+916380194475",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Kovilpatti",
-      "addressRegion": "Tamil Nadu",
-      "addressCountry": "India"
-    },
-    "sameAs": [
-      "https://github.com/subashmuthub",
-      "https://www.linkedin.com/in/subash-muthu-b-8a5587349",
-      "https://leetcode.com/u/Subash_Muthu/"
-    ]
+    "@context":"https://schema.org","@type":"Person",
+    "name":"Subash Muthu B","jobTitle":"Full Stack Developer",
+    "url":"https://subashmuthub.dev","email":"subashmuthu149@gmail.com",
+    "telephone":"+916380194475",
+    "address":{"@type":"PostalAddress","addressLocality":"Kovilpatti","addressRegion":"Tamil Nadu","addressCountry":"India"},
+    "sameAs":["https://github.com/subashmuthub","https://www.linkedin.com/in/subash-muthu-b-8a5587349","https://leetcode.com/u/Subash_Muthu/"]
   }
   </script>
 

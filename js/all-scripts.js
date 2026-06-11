@@ -322,6 +322,57 @@ function initGlitchEffect() {
 }
 
 /* ─────────────────────────────
+   CONTACT FORM (Formspree)
+───────────────────────────── */
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const endpoint = form.getAttribute('action') || 'https://formspree.io/f/xlgkwlgr';
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    const btn = document.getElementById('sendBtn');
+    const status = document.getElementById('formStatus');
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+    status.className = 'form-status';
+    status.textContent = '';
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.className = 'form-status success';
+        status.textContent = '✓ Message sent! I will reply within 24 hours.';
+        form.reset();
+      } else {
+        throw new Error('Formspree request failed');
+      }
+    } catch (error) {
+      status.className = 'form-status error';
+      status.textContent = '✗ Something went wrong. Please email directly.';
+    } finally {
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Project Inquiry';
+      btn.disabled = false;
+    }
+  });
+}
+
+/* ─────────────────────────────
    NOTIFICATION
 ───────────────────────────── */
 window.showNotification = (message, type = 'success') => {
@@ -458,6 +509,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCardTilt();
   initProfileEffects();
   initGlitchEffect();
+  initContactForm();
   initSectionObserver();
   initProjectScreenshots();
   initCmdHint();
